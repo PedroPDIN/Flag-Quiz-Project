@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
-import Home from './components/Home/Home'
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './components/Routes/Routes'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App" >
-          <Home />
+          <Routes />
         </div>
       </BrowserRouter>
     );

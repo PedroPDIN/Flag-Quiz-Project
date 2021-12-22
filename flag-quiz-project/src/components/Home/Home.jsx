@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
-import Play from '../Play/Play'
-import Options from '../Options/Options'
-import Library from '../Library/Library'
-import NotFound from '../NotFound/NotFound';
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
   render() {
@@ -12,12 +8,11 @@ class Home extends Component {
         <h2>
           Seja bem vindo ao Flag Quiz!!!
         </h2>
-        <Switch>
-          <Route exact path="/play" component={Play} />
-          <Route exact path="/options" component={Options} />
-          <Route exact path="/Library" component={Library} />
-          <Route exact path="*" component={NotFound}/>
-        </Switch>
+        <div>
+          <Link to="/play">Play</Link>
+          <Link to="/options">Options</Link>
+          <Link to="/Library">Library</Link>
+        </div>
       </div>
     );
   }
