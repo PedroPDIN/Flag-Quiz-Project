@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import './Home.css'
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <h2>
+      <div className='conteiner-home'>
+
+        <h2 className='h2-home'>
           Seja bem vindo ao Flag Quiz!!!
         </h2>
-        <p>Desafie-se seus conhecimentos sobre as bandeiras do mundo inteiro.</p>
-        <div>
-          <Link to="/play">Play</Link>
-          <Link to="/options">Options</Link>
-          <Link to="/Library">Library</Link>
+
+        <p className='p-home'>
+          Desafie-se seus conhecimentos sobre as bandeiras do mundo inteiro.
+          </p>
+
+        <div className='links-home'>
+          <Link to="/play" className='link-home-play'>Play</Link>
+          <Link to="/options" className='link-home-options'>Options</Link>
+          <Link to="/Library" className='link-home-library'>Library</Link>
         </div>
+
       </div>
     );
   }
