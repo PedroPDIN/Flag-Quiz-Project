@@ -13,7 +13,7 @@ class Home extends Component {
 
         <p className='p-home'>
           Desafie-se seus conhecimentos sobre as bandeiras do mundo inteiro.
-          </p>
+        </p>
 
         <div className='links-home'>
           <Link to="/play" className='link-home-play'>Play</Link>
