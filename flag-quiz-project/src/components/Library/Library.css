@@ -1,0 +1,17 @@
+.conteiner-header-library {
+  align-items: center;
+  display: flex;
+  font-family: roboto;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.link-library {
+  background-color: rgb(10, 194, 10);
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 8px;
+  text-decoration: none;
+}
