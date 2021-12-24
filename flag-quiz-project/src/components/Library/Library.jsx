@@ -17,25 +17,13 @@ class Library extends Component {
   }
 
   async countriesApi() {
-    const response = await fetch('https://restcountries.com/v3.1/all')
-    const datas = await response.json();
-
-    const countries = datas
-      .map((data) => ({ 'name': data.altSpellings[1], 'image': data.coatOfArms.png }))
-      .filter((value) => value.name !== undefined)
-      .filter((value) => value.image !== undefined)
-      .sort((a, b) => {
-        if (a.name > b.name) {
-          return 1;
-        }
-        if (a.name < b.name) {
-          return -1;
-        } else {
-          return 0;
-        }
-      })
-
-    this.setState({ infoFlags: countries });
+    const response = await fetch('https://restcountries.com/v2/all')
+    const data = await response.json();
+    
+    const countries = data
+    .map((data) => ({ 'name': data.name, 'image': data.flag }))
+   
+    this.setState({ infoFlags: countries })
   }
 
   render() {
