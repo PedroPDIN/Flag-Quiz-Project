@@ -34,14 +34,14 @@ class Library extends Component {
 
         <header className="conteiner-header-library">
           <Link to="/" className="link-library">Home</Link>
-          <h3>Library</h3>
+          <h3 className="h3-library">Library</h3>
         </header>
 
-        <section>
+        <section className="conteiner-section-library">
           {infoFlags.map((info) => (
-            <div key={info.name}>
-              <img src={info.image} alt="flag" />
-              <span>{info.name}</span>
+            <div key={info.name} className="conteiner-info-library">
+              <img src={info.image} alt="flag" className="img-library"/>
+              <span className="span-info-library">{info.name}</span>
             </div>
           ))}
         </section>
