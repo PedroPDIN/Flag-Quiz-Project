@@ -6,7 +6,7 @@ class Options extends Component {
     return (
       <div>
         <span>vc esta na Options</span>
-        <Link to="/">Home</Link>
+        <Link to="/menu">Menu</Link>
       </div>
     )
   }

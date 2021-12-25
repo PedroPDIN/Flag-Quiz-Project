@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-class Play extends Component {
+class Start extends Component {
   render() {
     return (
       <div>
-        <span>vc esta na Play</span>
+        <span>vc esta na Start</span>
     
-        <Link to="/menu">Menu</Link>
+        <Link to="/menu">Entrar</Link>
         </div>
     )
   }
 }
 
-export default Play;
+export default Start;

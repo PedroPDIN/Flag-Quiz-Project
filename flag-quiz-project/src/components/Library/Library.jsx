@@ -36,7 +36,7 @@ class Library extends Component {
       <main>
 
         <header className="conteiner-header-library">
-          <Link to="/" className="link-library">Home</Link>
+          <Link to="/menu" className="link-library">Menu</Link>
           <h3 className="h3-library">Library</h3>
         </header>
 

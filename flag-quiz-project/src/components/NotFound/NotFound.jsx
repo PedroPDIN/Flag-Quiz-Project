@@ -6,7 +6,7 @@ class NotFound extends Component {
     return (
       <div>
         <span>Página não encontrada 😞</span>
-        <Link to="/">Home</Link>
+        <Link to="/Menu">Menu</Link>
       </div>
     )
   }
