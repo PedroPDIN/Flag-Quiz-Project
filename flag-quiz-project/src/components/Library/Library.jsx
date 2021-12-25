@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading'
 import './Library.css';
 
 class Library extends Component {
@@ -10,6 +11,7 @@ class Library extends Component {
 
     this.state = {
       infoFlags: [],
+      loading: false
     }
   }
 
@@ -24,11 +26,12 @@ class Library extends Component {
     const countries = data
       .map((data) => ({ 'name': data.name, 'image': data.flag }))
 
-    this.setState({ infoFlags: countries })
+    this.setState({ infoFlags: countries, loading: true })
   }
 
   render() {
-    const { infoFlags } = this.state;
+    const { infoFlags, loading } = this.state;
+    if (!loading) return (<Loading />)
     return (
       <main>
 
@@ -40,7 +43,7 @@ class Library extends Component {
         <section className="conteiner-section-library">
           {infoFlags.map((info) => (
             <div key={info.name} className="conteiner-info-library">
-              <img src={info.image} alt={info.name} className="img-library"/>
+              <img src={info.image} alt={info.name} className="img-library" />
               <span className="span-info-library">{info.name}</span>
             </div>
           ))}
@@ -52,3 +55,4 @@ class Library extends Component {
 }
 
 export default Library;
+
