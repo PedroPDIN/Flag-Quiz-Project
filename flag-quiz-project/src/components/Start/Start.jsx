@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Start.css';
 
 class Start extends Component {
   render() {
     return (
-      <div>
-        <span>vc esta na Start</span>
-    
-        <Link to="/menu">Entrar</Link>
-        </div>
+      <div className="conteiner-start">
+        <h1 className="h1-start">FLAG QUIZ</h1>
+        <NavLink
+          to="/menu"  
+          className="link-start"
+        >
+          ENTRAR
+        </NavLink>
+      </div>
     )
   }
 }
