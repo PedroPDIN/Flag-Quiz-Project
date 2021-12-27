@@ -9,9 +9,18 @@ class Options extends Component {
 
     this.flagsApi = this.flagsApi.bind(this);
     /* this.filterFlags = this.filterFlags.bind(this); */
+    this.toDefineClick1 = this.toDefineClick1.bind(this);
+    this.toDefineClick2 = this.toDefineClick2.bind(this);
+    this.toDefineClick3 = this.toDefineClick3.bind(this);
+    this.toDefineClick4 = this.toDefineClick4.bind(this);
+    this.toDefineClick5 = this.toDefineClick5.bind(this);
 
     this.state = {
-      amountFlags: [true, true, true, true, true],
+      define1: true,
+      define2: true,
+      define3: true,
+      define4: true,
+      define5: true,
       flags: [],
     }
   }
@@ -27,12 +36,32 @@ class Options extends Component {
     this.setState({ flags: countries })
   };
 
+  toDefineClick1() {
+    this.setState({ define1: !this.state.define1 })
+  };
+
+  toDefineClick2() {
+    this.setState({ define2: !this.state.define2 })
+  };
+
+  toDefineClick3() {
+    this.setState({ define3: !this.state.define3 })
+  };
+
+  toDefineClick4() {
+    this.setState({ define4: !this.state.define4 })
+  };
+
+  toDefineClick5() {
+    this.setState({ define5: !this.state.define5 })
+  };
+
   /*  filterFlags() {
      const { flags } = this.state;
    }; */
 
   render() {
-    /* const { amountFlags } = this.state; */
+    const { define1, define2, define3, define4, define5 } = this.state;
     return (
       <main>
 
@@ -43,7 +72,18 @@ class Options extends Component {
 
         <form>
           <NumbersFlags />
-          <FilterFlag />
+          <FilterFlag
+            define1={define1}
+            define2={define2}
+            define3={define3}
+            define4={define4}
+            define5={define5}
+            toDefineClick1={this.toDefineClick1}
+            toDefineClick2={this.toDefineClick2}
+            toDefineClick3={this.toDefineClick3}
+            toDefineClick4={this.toDefineClick4}
+            toDefineClick5={this.toDefineClick5}
+          />
         </form>
 
       </main>
