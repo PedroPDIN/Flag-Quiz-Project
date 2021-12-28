@@ -111,7 +111,7 @@ class Options extends Component {
   }
 
   render() {
-    const { define1, define2, define3, define4, define5, numberValue } = this.state;
+    const { define1, define2, define3, define4, define5 } = this.state;
     return (
       <main>
         <Header />
