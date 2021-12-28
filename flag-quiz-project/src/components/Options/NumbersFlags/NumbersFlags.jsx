@@ -1,69 +1,70 @@
 import React, { Component } from 'react';
+import './NumbersFlags.css';
 
 class NumbersFlags extends Component {
   render() {
     const { onChangeValue } = this.props;
     return (
-      <div>
+      <div className="container-numbers-options">
         <fieldset>
           <legend>Numbers of Flags</legend>
-          <label htmlFor="values-1">
+          <label htmlFor="values-1" className="input-numbers-options">
             <input
               id="values-1"
               type="radio"
               name='numbers'
               value='10'
-              onClick={onChangeValue}
+              onChange={onChangeValue}
             />
             10
           </label>
-          <label htmlFor="values-2">
+          <label htmlFor="values-2" className="input-numbers-options">
             <input
               id="values-2"
               type="radio"
               name='numbers'
               value='20'
-              onClick={onChangeValue}
+              onChange={onChangeValue}
             />
             20
           </label>
-          <label htmlFor="values-3">
+          <label htmlFor="values-3" className="input-numbers-options">
             <input
               id="values-3"
               type="radio"
               name='numbers'
-              value='50' 
-              onClick={onChangeValue}
-              />
+              value='50'
+              onChange={onChangeValue}
+            />
             50
           </label>
-          <label htmlFor="values-4">
+          <label htmlFor="values-4" className="input-numbers-options">
             <input
               id="values-4"
               type="radio"
               name='numbers'
               value='100'
-              onClick={onChangeValue}
+              onChange={onChangeValue}
             />
             100
           </label>
-          <label htmlFor="values-5">
+          <label htmlFor="values-5" className="input-numbers-options">
             <input
               id="values-5"
               type="radio"
               name='numbers'
               value='150'
-              onClick={onChangeValue}
+              onChange={onChangeValue}
             />
             150
           </label>
-          <label htmlFor="values-6">
+          <label htmlFor="values-6" className="input-numbers-options">
             <input
               id="values-6"
               type="radio"
               name='numbers'
               value='200'
-              onClick={onChangeValue}
+              onChange={onChangeValue}
             />
             200
           </label>

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
+
+button {
+  background-color: green;
+  border: solid green 5px;
+  color: green;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+button:hover {
+  color: white;
+}
+
+button:active {
+  transform: translateY(4px);
+}

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 class Header extends Component {
   render() {
     return (
 
-      <header>
-        <Link to="/menu">Menu</Link>
-        <span>Options</span>
+      <header className="container-header-option">
+        <Link to="/menu" className="link-option">Menu</Link>
+        <h3 className="h3-option">Options</h3>
       </header>
 
     )

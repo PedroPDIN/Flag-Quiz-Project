@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import './FilterFlag.css';
 
 class FilterFlag extends Component {
   render() {
@@ -17,10 +18,11 @@ class FilterFlag extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="container-filter-option">
         <fieldset>
           <legend>Flags</legend>
-          <label htmlFor="flags-1">
+          <div>
+          <label htmlFor="flags-1" className="input-filter-options">
             <input
               id="flags-1"
               type="checkbox"
@@ -29,7 +31,7 @@ class FilterFlag extends Component {
             />
             África
           </label>
-          <label htmlFor="flags-2">
+          <label htmlFor="flags-2" className="input-filter-options">
             <input
               id="flags-2"
               type="checkbox"
@@ -38,7 +40,7 @@ class FilterFlag extends Component {
             />
             Américas
           </label>
-          <label htmlFor="flags-3">
+          <label htmlFor="flags-3" className="input-filter-options">
             <input
               id="flags-3"
               type="checkbox"
@@ -47,7 +49,7 @@ class FilterFlag extends Component {
             />
             Ásia
           </label>
-          <label htmlFor="flags-4">
+          <label htmlFor="flags-4" className="input-filter-options">
             <input
               id="flags-4"
               type="checkbox"
@@ -56,7 +58,7 @@ class FilterFlag extends Component {
             />
             Europa
           </label>
-          <label htmlFor="flags-5">
+          <label htmlFor="flags-5" className="input-filter-options">
             <input
               id="flags-5"
               type="checkbox"
@@ -65,6 +67,7 @@ class FilterFlag extends Component {
             />
             Oceania
           </label>
+          </div>
         </fieldset>
       </div>
     )

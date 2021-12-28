@@ -3,6 +3,7 @@ import Header from "./Header/Header";
 import NumbersFlags from "./NumbersFlags/NumbersFlags";
 import FilterFlag from "./FilterFlag/FilterFlag";
 import Button from "./Button/Button";
+import './Options.css';
 
 class Options extends Component {
   constructor() {
@@ -30,7 +31,7 @@ class Options extends Component {
       flagsEurope: [],
       flagsOceania: [],
       totalPlay: [], // passar via props para para o componente "Play".
-      numberValue: '', // passar via props para para o componente "Play".
+      numberValue: '20', // passar via props para para o componente "Play".
     }
   }
 
@@ -102,11 +103,11 @@ class Options extends Component {
           return -1;
         }
         return 0;
-      }),   
+      }),
     });
   };
 
-  onChangeValue({target}) {
+  onChangeValue({ target }) {
     this.setState({ numberValue: target.value })
   }
 
@@ -115,7 +116,7 @@ class Options extends Component {
     return (
       <main>
         <Header />
-        <form>
+        <form className="container-form-options">
           <NumbersFlags onChangeValue={this.onChangeValue} />
           <FilterFlag
             define1={define1}

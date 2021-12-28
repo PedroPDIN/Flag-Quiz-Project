@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
+
+.container-filter-option {
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px;
+  padding: 25px;
+  text-decoration: none;
+}
+
+.container-filter-option div {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-filter-options {
+ height: 50px;
+ width: 130px;
+ cursor: pointer;
+}
+
+.input-filter-options input {
+ margin: 5px;
+}
