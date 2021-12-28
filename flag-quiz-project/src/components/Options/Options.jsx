@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import Header from "./Header/Header";
 import NumbersFlags from "./NumbersFlags/NumbersFlags";
 import FilterFlag from "./FilterFlag/FilterFlag";
 
@@ -64,12 +64,7 @@ class Options extends Component {
     const { define1, define2, define3, define4, define5 } = this.state;
     return (
       <main>
-
-        <header>
-          <Link to="/menu">Menu</Link>
-          <span>Options</span>
-        </header>
-
+        <Header />
         <form>
           <NumbersFlags />
           <FilterFlag
