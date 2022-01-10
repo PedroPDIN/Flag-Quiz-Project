@@ -8,10 +8,12 @@ class Button extends Component {
     return (
       <div>
         <Link to="/menu">
-          <button type='button' onClick={filter}>
-            Salvar
-          </button>
         </Link>
+
+        <button type='button' onClick={filter} >
+          Salvar
+        </button>
+
       </div>
     )
   }

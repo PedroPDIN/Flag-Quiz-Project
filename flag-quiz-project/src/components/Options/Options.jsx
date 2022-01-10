@@ -10,7 +10,7 @@ class Options extends Component {
     super();
 
     this.flagsApi = this.flagsApi.bind(this);
-    this.filterFlags = this.filterFlags.bind(this);
+    this.validButton = this.validButton.bind(this);
     this.onChangeValue = this.onChangeValue.bind(this);
     this.toDefineClick1 = this.toDefineClick1.bind(this);
     this.toDefineClick2 = this.toDefineClick2.bind(this);
@@ -24,13 +24,12 @@ class Options extends Component {
       define3: true,
       define4: true,
       define5: true,
-      flags: [],
+      flags: [], // passar via props para o componente "Play".
       flagsAfrica: [],
       flagsAmericas: [],
       flagsAsia: [],
       flagsEurope: [],
       flagsOceania: [],
-      totalPlay: [], // passar via props para para o componente "Play".
       numberValue: '20', // passar via props para para o componente "Play".
     }
   }
@@ -55,56 +54,78 @@ class Options extends Component {
 
   toDefineClick1() {
     this.setState({ define1: !this.state.define1 })
+    const { define1, flags, flagsAfrica } = this.state;
+    if (define1 === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== 'Africa') })
+    } else {
+      this.setState((prevState) => ({
+        flags: [...prevState.flags, ...flagsAfrica],
+      }))
+    }
   };
 
   toDefineClick2() {
     this.setState({ define2: !this.state.define2 })
+    const { define2, flags, flagsAmericas } = this.state;
+    if (define2 === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== 'Americas') })
+    } else {
+      this.setState((prevState) => ({
+        flags: [...prevState.flags, ...flagsAmericas],
+      }))
+    }
   };
 
   toDefineClick3() {
     this.setState({ define3: !this.state.define3 })
+    const { define3, flags, flagsAsia } = this.state;
+    if (define3 === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== 'Asia') })
+    } else {
+      this.setState((prevState) => ({
+        flags: [...prevState.flags, ...flagsAsia],
+      }))
+    }
   };
 
   toDefineClick4() {
     this.setState({ define4: !this.state.define4 })
+    const { define4, flags, flagsEurope } = this.state;
+    if (define4 === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== 'Europe') })
+    } else {
+      this.setState((prevState) => ({
+        flags: [...prevState.flags, ...flagsEurope],
+      }))
+    }
   };
 
   toDefineClick5() {
     this.setState({ define5: !this.state.define5 })
+    const { define5, flags, flagsOceania } = this.state;
+    if (define5 === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== 'Oceania') })
+    } else {
+      this.setState((prevState) => ({
+        flags: [...prevState.flags, ...flagsOceania],
+      }))
+    }
   };
 
-  filterFlags() {
-    const {
-      flags,
-      flagsAfrica,
-      flagsAmericas,
-      flagsAsia,
-      flagsEurope,
-      flagsOceania,
-      define1,
-      define2,
-      define3,
-      define4,
-      define5,
-    } = this.state;
-    const total = [];
-    if (define1 === false) total.push(...flagsAfrica);
-    if (define2 === false) total.push(...flagsAmericas);
-    if (define3 === false) total.push(...flagsAsia)
-    if (define4 === false) total.push(...flagsEurope)
-    if (define5 === false) total.push(...flagsOceania)
-    total.push(flags)
-    this.setState({
-      totalPlay: total.sort((a, b) => {
-        if (a.name > b.name) {
-          return 1;
-        }
-        if (a.name < b.name) {
-          return -1;
-        }
-        return 0;
-      }),
-    });
+  validButton() {
+    const { flags, numberValue } = this.state;
+
+    if (flags.length > Number(numberValue)) {
+      const { history } = this.props;
+      history.push('/menu');
+    } else {
+      alert(`
+         Erro:
+         Números de bandeiras não selecionado,
+         ou Números de bandeiras não corresponde
+         com a quantidade de bandeiras selecionado!
+         `)
+    }
   };
 
   onChangeValue({ target }) {
@@ -117,7 +138,9 @@ class Options extends Component {
       <main>
         <Header />
         <form className="container-form-options">
-          <NumbersFlags onChangeValue={this.onChangeValue} />
+          <NumbersFlags
+            onChangeValue={this.onChangeValue}
+          />
           <FilterFlag
             define1={define1}
             define2={define2}
@@ -130,7 +153,9 @@ class Options extends Component {
             toDefineClick4={this.toDefineClick4}
             toDefineClick5={this.toDefineClick5}
           />
-          <Button filter={this.filterFlags} />
+          <Button
+            filter={this.validButton}
+          />
         </form>
 
       </main>
