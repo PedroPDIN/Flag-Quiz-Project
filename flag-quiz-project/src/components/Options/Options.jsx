@@ -5,7 +5,7 @@ import NumbersFlags from "./NumbersFlags/NumbersFlags";
 import FilterFlag from "./FilterFlag/FilterFlag";
 import Button from "./Button/Button";
 import { addData } from "../redux/actions";
-import fetchApi from "../../services/fetchApi";
+import { fetchApi } from "../../services/fetchApi";
 import './Options.css';
 
 class Options extends Component {
@@ -119,7 +119,7 @@ class Options extends Component {
 
     if (flags.length > Number(numberValue)) {
       const { history, funcDispatch } = this.props;
-      funcDispatch(numberValue, flags)
+      funcDispatch(numberValue, flags);
       history.push('/menu');
     } else {
       alert(`
@@ -167,7 +167,7 @@ class Options extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-     funcDispatch: (a, b) => dispatch(addData(a, b))
+  funcDispatch: (a, b) => dispatch(addData(a, b))
 })
 
 export default connect(null, mapDispatchToProps)(Options);

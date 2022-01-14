@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading'
-import fetchApi from "../../services/fetchApi";
+import { fetchApi } from "../../services/fetchApi";
 import './Library.css';
 
 class Library extends Component {
