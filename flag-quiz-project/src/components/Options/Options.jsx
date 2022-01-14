@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Header from "./Header/Header";
 import NumbersFlags from "./NumbersFlags/NumbersFlags";
 import FilterFlag from "./FilterFlag/FilterFlag";
 import Button from "./Button/Button";
+import { addData } from "../redux/actions";
 import './Options.css';
 
 class Options extends Component {
@@ -116,7 +118,8 @@ class Options extends Component {
     const { flags, numberValue } = this.state;
 
     if (flags.length > Number(numberValue)) {
-      const { history } = this.props;
+      const { history, funcDispatch } = this.props;
+      funcDispatch(numberValue, flags)
       history.push('/menu');
     } else {
       alert(`
@@ -163,4 +166,8 @@ class Options extends Component {
   }
 }
 
-export default Options;
+const mapDispatchToProps = (dispatch) => ({
+     funcDispatch: (a, b) => dispatch(addData(a, b))
+})
+
+export default connect(null, mapDispatchToProps)(Options);
