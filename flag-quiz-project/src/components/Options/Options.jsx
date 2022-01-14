@@ -5,6 +5,7 @@ import NumbersFlags from "./NumbersFlags/NumbersFlags";
 import FilterFlag from "./FilterFlag/FilterFlag";
 import Button from "./Button/Button";
 import { addData } from "../redux/actions";
+import fetchApi from "../../services/fetchApi";
 import './Options.css';
 
 class Options extends Component {
@@ -41,8 +42,7 @@ class Options extends Component {
   };
 
   async flagsApi() {
-    const response = await fetch('https://restcountries.com/v2/all')
-    const data = await response.json();
+    const data = await fetchApi();
     const countries = data.map((data) => ({ 'name': data.name, 'image': data.flag, 'region': data.region }))
     this.setState({
       flags: countries,
