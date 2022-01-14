@@ -19,8 +19,6 @@ class Routes extends Component {
           <Route exact path="/Library" component={Library} />
           <Route exact path="*" component={NotFound} />
         </Switch>
-
-
       </div>
     )
   }

@@ -6,9 +6,9 @@ class Play extends Component {
     return (
       <div>
         <span>vc esta na Play</span>
-    
+
         <Link to="/menu">Menu</Link>
-        </div>
+      </div>
     )
   }
 }
