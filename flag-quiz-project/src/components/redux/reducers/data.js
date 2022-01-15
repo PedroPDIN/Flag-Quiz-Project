@@ -1,9 +1,8 @@
 import { ADD_DATA } from '../actions';
-import { flags } from '../../../services/fetchApi';
 
 const INIT = {
   number: '20',
-  flags: flags,
+  flags: '',
 }
 
 const data = (state = INIT, action) => {
