@@ -11,7 +11,7 @@ class Play extends Component {
 
     this.state = {
       score: 0,
-      valuesFlags: [],
+      valueFlags: {},
       valuesNameFlags: [],
     }
   }
@@ -28,11 +28,12 @@ class Play extends Component {
 
   valueFlag(flags) {
     const { dataNumber } = this.props;
+    const { score } = this.state;
     const number = Number(dataNumber)
     let elements = [];
     const value = () => Math.floor(Math.random() * flags.length);
     for (let i = 0; i < number; i += 1) elements.push(flags[value()])
-    return this.setState({ valuesFlags: elements, valuesNameFlags: this.nameFlags(elements) })
+    return this.setState({ valueFlags: elements[score], valuesNameFlags: this.nameFlags(elements) })
   }
 
   nameFlags(elements) {
