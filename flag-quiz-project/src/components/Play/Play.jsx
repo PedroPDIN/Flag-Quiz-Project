@@ -42,13 +42,20 @@ class Play extends Component {
 
   render() {
     const { dataNumber } = this.props;
-    const { score } = this.state;
+    const { score, valueFlags } = this.state;
     return (
       <div>
         <HeaderPlay
           number={dataNumber}
           score={score}
         />
+        <div>
+          <img src={valueFlags.image} alt={valueFlags.name} />
+          <button>{valueFlags.name}</button>
+          <button>{valueFlags.name}</button>
+          <button>{valueFlags.name}</button>
+          <button>{valueFlags.name}</button>
+        </div>
       </div>
     )
   }
