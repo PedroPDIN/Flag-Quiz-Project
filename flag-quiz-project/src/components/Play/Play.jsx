@@ -8,12 +8,11 @@ class Play extends Component {
     super();
 
     this.updateValues = this.updateValues.bind(this);
-    this.valueFlag = this.valueFlag.bind(this);
 
     this.state = {
       score: 0,
       valuesFlags: [],
-      valuesNameFags: [],
+      valuesNameFlags: [],
     }
   }
 
@@ -33,7 +32,11 @@ class Play extends Component {
     let elements = [];
     const value = () => Math.floor(Math.random() * flags.length);
     for (let i = 0; i < number; i += 1) elements.push(flags[value()])
-    return this.setState({ valuesFlags: elements})
+    return this.setState({ valuesFlags: elements, valuesNameFlags: this.nameFlags(elements) })
+  }
+
+  nameFlags(elements) {
+    return elements.map((element) => element.name);
   }
 
   render() {
