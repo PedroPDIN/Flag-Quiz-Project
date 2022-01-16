@@ -31,21 +31,27 @@ class Play extends Component {
   randomValues(flags) {
     const { dataNumber } = this.props;
     const { score } = this.state;
-    const number = Number(dataNumber)  
+    const number = Number(dataNumber)
     let elements = [];
+
     const value = () => Math.floor(Math.random() * flags.length);
     for (let i = 0; i < number; i += 1) elements.push(flags[value()]);
+    
     this.randomNumber(elements, score)
     return this.setState({ valueFlag: elements[score] })
   }
 
   randomNumber(elements, score) {
-    const randomN = () => Math.floor(Math.random() * elements.length);
     const flagTrue = elements[score].name
-    const flagFalse1 = elements[randomN()].name;
-    const flagFalse2 = elements[randomN()].name;
-    const flagFalse3 = elements[randomN()].name;
+
+    const flagsResult = elements.filter((element) => element.name !== flagTrue)
+    const randomN = () => Math.floor(Math.random() * flagsResult.length);
+
+    const flagFalse1 = flagsResult[randomN()].name;
+    const flagFalse2 = flagsResult[randomN()].name;
+    const flagFalse3 = flagsResult[randomN()].name;
     const nameFlags = [flagTrue, flagFalse1, flagFalse2, flagFalse3]
+
     this.setState({ valuesNamesFlags: nameFlags })
   }
 
