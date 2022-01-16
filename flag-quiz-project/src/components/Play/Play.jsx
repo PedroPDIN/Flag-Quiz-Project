@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import HeaderPlay from "./components/header/HeaderPlay";
 import { flags } from "../../services/fetchApi";
+import "./Play.css";
 
 class Play extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class Play extends Component {
 
     const value = () => Math.floor(Math.random() * flags.length);
     for (let i = 0; i < number; i += 1) elements.push(flags[value()]);
-    
+
     this.randomNumber(elements, score)
     return this.setState({ valueFlag: elements[score] })
   }
@@ -65,19 +66,20 @@ class Play extends Component {
     const { dataNumber } = this.props;
     const { score, valueFlag, valuesNamesFlags, randomFour } = this.state;
     return (
-      <div>
+      <main>
         <HeaderPlay
           number={dataNumber}
           score={score}
         />
-        <div>
-          <img src={valueFlag.image} alt={valueFlag.name} />
-          <button>{valuesNamesFlags[randomFour[0]]}</button>
-          <button>{valuesNamesFlags[randomFour[1]]}</button>
-          <button>{valuesNamesFlags[randomFour[2]]}</button>
-          <button>{valuesNamesFlags[randomFour[3]]}</button>
+        <div className="container-play">
+          <h3 className="title-play">Qual é essa bandeira?</h3>
+          <img className="img-play" src={valueFlag.image} alt={valueFlag.name} />
+          <button className="button-alt-play">{valuesNamesFlags[randomFour[0]]}</button>
+          <button className="button-alt-play">{valuesNamesFlags[randomFour[1]]}</button>
+          <button className="button-alt-play">{valuesNamesFlags[randomFour[2]]}</button>
+          <button className="button-alt-play">{valuesNamesFlags[randomFour[3]]}</button>
         </div>
-      </div>
+      </main>
     )
   }
 }
