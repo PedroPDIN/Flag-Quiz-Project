@@ -12,7 +12,7 @@ class Play extends Component {
     this.state = {
       score: 0,
       valueFlags: {},
-      valuesNameFlags: [],
+      valuesNamesFlags: [],
     }
   }
 
@@ -23,17 +23,28 @@ class Play extends Component {
   async updateValues() {
     const { dataFlags } = this.props;
     const flagsApi = await flags();
-    !dataFlags ? this.valueFlag(flagsApi) : this.valueFlag(dataFlags)
+    !dataFlags ? this.randomValues(flagsApi) : this.randomValues(dataFlags)
   }
 
-  valueFlag(flags) {
+  randomValues(flags) {
     const { dataNumber } = this.props;
     const { score } = this.state;
     const number = Number(dataNumber)
     let elements = [];
     const value = () => Math.floor(Math.random() * flags.length);
-    for (let i = 0; i < number; i += 1) elements.push(flags[value()])
-    return this.setState({ valueFlags: elements[score], valuesNameFlags: this.nameFlags(elements) })
+    for (let i = 0; i < number; i += 1) elements.push(flags[value()]);
+    this.randomNumber(elements, score)
+    return this.setState({ valueFlags: elements[score] })
+  }
+
+  randomNumber(elements, score) {
+    const randomN = () => Math.floor(Math.random() * elements.length);
+    const flagTrue = elements[score].name
+    const flagFalse1 = elements[randomN()].name;
+    const flagFalse2 = elements[randomN()].name;
+    const flagFalse3 = elements[randomN()].name;
+    const nameFlags = [flagTrue, flagFalse1, flagFalse2, flagFalse3]
+    this.setState({ valuesNamesFlags: nameFlags })
   }
 
   nameFlags(elements) {
