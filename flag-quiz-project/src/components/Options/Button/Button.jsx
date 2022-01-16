@@ -10,7 +10,7 @@ class Button extends Component {
         <Link to="/menu">
         </Link>
 
-        <button type='button' onClick={filter} >
+        <button type='button' onClick={filter} className='button-option' >
           Salvar
         </button>
 
