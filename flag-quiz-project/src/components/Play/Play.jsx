@@ -14,13 +14,11 @@ class Play extends Component {
       score: 0,
       valueFlag: {},
       valuesNamesFlags: [],
-      randomFour: [],
     }
   }
 
   componentDidMount() {
     this.updateValues();
-    this.randomNumberFour();
   }
 
   async updateValues() {
@@ -53,18 +51,13 @@ class Play extends Component {
     const flagFalse3 = flagsResult[randomN()].name;
     const nameFlags = [flagTrue, flagFalse1, flagFalse2, flagFalse3]
 
-    this.setState({ valuesNamesFlags: nameFlags })
-  }
 
-  randomNumberFour() {
-    const array = [0, 1, 2, 3]
-    array.sort(() => Math.random() - 0.5);
-    this.setState({ randomFour: array })
+    this.setState({ valuesNamesFlags: nameFlags.sort(() => Math.random() - 0.5) })
   }
 
   render() {
     const { dataNumber } = this.props;
-    const { score, valueFlag, valuesNamesFlags, randomFour } = this.state;
+    const { score, valueFlag, valuesNamesFlags } = this.state;
     return (
       <main>
         <HeaderPlay
@@ -74,16 +67,20 @@ class Play extends Component {
         <div className="container-play">
           <h3 className="title-play">Qual é essa bandeira?</h3>
           <img className="img-play" src={valueFlag.image} alt={valueFlag.name} />
-          <button className="button-alt-play">{valuesNamesFlags[randomFour[0]]}</button>
-          <button className="button-alt-play">{valuesNamesFlags[randomFour[1]]}</button>
-          <button className="button-alt-play">{valuesNamesFlags[randomFour[2]]}</button>
-          <button className="button-alt-play">{valuesNamesFlags[randomFour[3]]}</button>
+          {valuesNamesFlags.map((valueName, index) => (
+            <button
+              type="button"
+              key={ index }
+              className="button-alt-play"
+            >
+              { valueName }
+            </button>
+          ))}
         </div>
       </main>
     )
   }
 }
-
 
 const mapStateToProps = (state) => ({
   dataNumber: state.data.number,
