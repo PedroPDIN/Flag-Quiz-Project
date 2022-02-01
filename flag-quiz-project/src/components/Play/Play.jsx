@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import HeaderPlay from "./components/header/HeaderPlay";
+import ButtonNext from "./components/ButtonNext/ButtonNext";
 import { flags } from "../../services/fetchApi";
 import "./Play.css";
 
@@ -9,8 +10,13 @@ class Play extends Component {
     super();
 
     this.updateValues = this.updateValues.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.clickNext = this.clickNext.bind(this);
 
     this.state = {
+      index: 0, // será responsável por pegar as indece das perguntas.
+      isDisable: false,
+      next: false,
       score: 0,
       valueFlag: {},
       valuesNamesFlags: [],
@@ -29,19 +35,19 @@ class Play extends Component {
 
   randomValues(flags) {
     const { dataNumber } = this.props;
-    const { score } = this.state;
+    const { index } = this.state;
     const number = Number(dataNumber)
     let elements = [];
 
     const value = () => Math.floor(Math.random() * flags.length);
     for (let i = 0; i < number; i += 1) elements.push(flags[value()]);
 
-    this.randomNumber(elements, score)
-    return this.setState({ valueFlag: elements[score] })
+    this.randomNumber(elements, index)
+    return this.setState({ valueFlag: elements[index] })
   }
 
-  randomNumber(elements, score) {
-    const flagTrue = elements[score].name
+  randomNumber(elements, index) {
+    const flagTrue = elements[index].name
 
     const flagsResult = elements.filter((element) => element.name !== flagTrue)
     const randomN = () => Math.floor(Math.random() * flagsResult.length);
@@ -55,9 +61,26 @@ class Play extends Component {
     this.setState({ valuesNamesFlags: nameFlags.sort(() => Math.random() - 0.5) })
   }
 
+  handleClick(event) {
+    const { valueFlag, score } = this.state;
+    if (event === valueFlag.name) {
+    alert("parabéns vc acertou!!!")
+    this.setState({ 
+      score: score + 1,
+    })
+    } else {
+      alert("parabéns vc errou!!!")
+    }
+  }
+
+  clickNext() {
+    const { index } = this.state;
+    this.setState({ index: index + 1 });
+  }
+
   render() {
     const { dataNumber } = this.props;
-    const { score, valueFlag, valuesNamesFlags } = this.state;
+    const { score, valueFlag, valuesNamesFlags, isDisable, index } = this.state;
     return (
       <main>
         <HeaderPlay
@@ -69,13 +92,19 @@ class Play extends Component {
           <img className="img-play" src={valueFlag.image} alt={valueFlag.name} />
           {valuesNamesFlags.map((valueName, index) => (
             <button
+              disabled={isDisable}
               type="button"
-              key={ index }
+              key={index}
+              value={ valueName }
               className="button-alt-play"
+              onClick={(event) => this.handleClick(event.target.value)}
             >
-              { valueName }
+              {valueName}
             </button>
-          ))}
+            ))}
+            {/* { isDisable && <ButtonNext next={ this.clickNext } /> } */}
+            
+            <ButtonNext next={ this.clickNext } />      
         </div>
       </main>
     )
