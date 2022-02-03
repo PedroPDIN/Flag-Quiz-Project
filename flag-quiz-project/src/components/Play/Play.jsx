@@ -89,7 +89,7 @@ class Play extends Component {
         />
         <div className="container-play">
           <h3 className="title-play">Qual é essa bandeira?</h3>
-          <img className="img-play" src={valueFlag.image} alt={valueFlag.name} />
+          <img className="img-play" src={valueFlag.svg} alt={valueFlag.name} />
           {valuesNamesFlags.map((valueName, index) => (
             <button
               disabled={isDisable}

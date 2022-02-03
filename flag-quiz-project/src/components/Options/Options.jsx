@@ -43,7 +43,7 @@ class Options extends Component {
 
   async flagsApi() {
     const data = await fetchApi();
-    const countries = data.map((data) => ({ 'name': data.name, 'image': data.flag, 'region': data.region }))
+    const countries = data.map((data) => ({ 'name': data.name, 'svg': data.flag, 'region': data.region }))
     this.setState({
       flags: countries,
       flagsAfrica: countries.filter((v) => v.region === 'Africa'),
