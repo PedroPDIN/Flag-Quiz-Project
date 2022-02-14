@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading'
+import { fetchApi } from "../../services/fetchApi";
 import './Library.css';
 
 class Library extends Component {
@@ -20,11 +21,8 @@ class Library extends Component {
   }
 
   async countriesApi() {
-    const response = await fetch('https://restcountries.com/v2/all')
-    const data = await response.json();
-
-    const countries = data
-      .map((data) => ({ 'name': data.name, 'image': data.flag }))
+    const data = await fetchApi()
+    const countries = data.map((data) => ({ 'name': data.name, 'image': data.flag }))
 
     this.setState({ infoFlags: countries, loading: true })
   }
@@ -42,9 +40,9 @@ class Library extends Component {
 
         <section className="conteiner-section-library">
           {infoFlags.map((info) => (
-            <div key={info.name} className="conteiner-info-library">
-              <img src={info.image} alt={info.name} className="img-library" />
-              <span className="span-info-library">{info.name}</span>
+            <div key={ info.name } className="conteiner-info-library">
+              <img src={ info.image } alt={ info.name } className="img-library" />
+              <span className="span-info-library">{ info.name }</span>
             </div>
           ))}
         </section>

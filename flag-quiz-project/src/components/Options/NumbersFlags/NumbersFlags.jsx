@@ -33,14 +33,24 @@ class NumbersFlags extends Component {
               id="values-3"
               type="radio"
               name='numbers'
+              value='25'
+              onChange={onChangeValue}
+            />
+            25
+          </label>
+          <label htmlFor="values-4" className="input-numbers-options">
+            <input
+              id="values-4"
+              type="radio"
+              name='numbers'
               value='50'
               onChange={onChangeValue}
             />
             50
           </label>
-          <label htmlFor="values-4" className="input-numbers-options">
+          <label htmlFor="values-5" className="input-numbers-options">
             <input
-              id="values-4"
+              id="values-5"
               type="radio"
               name='numbers'
               value='100'
@@ -48,9 +58,9 @@ class NumbersFlags extends Component {
             />
             100
           </label>
-          <label htmlFor="values-5" className="input-numbers-options">
+          <label htmlFor="values-6" className="input-numbers-options">
             <input
-              id="values-5"
+              id="values-6"
               type="radio"
               name='numbers'
               value='150'
@@ -58,9 +68,9 @@ class NumbersFlags extends Component {
             />
             150
           </label>
-          <label htmlFor="values-6" className="input-numbers-options">
+          <label htmlFor="values-7" className="input-numbers-options">
             <input
-              id="values-6"
+              id="values-7"
               type="radio"
               name='numbers'
               value='200'
