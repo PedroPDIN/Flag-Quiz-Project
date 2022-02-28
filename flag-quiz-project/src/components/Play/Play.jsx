@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import HeaderPlay from "./components/header/HeaderPlay";
 import ButtonNext from "./components/ButtonNext/ButtonNext";
-import { flags } from "../../services/fetchApi";
+import { fetchApi, flags } from "../../services/fetchApi";
 import "./Play.css";
 
 class Play extends Component {
@@ -18,9 +18,8 @@ class Play extends Component {
       isDisable: false,
       next: false,
       score: 0,
-      valueFlag: {},
-      valuesNamesFlags: [],
-    }
+      valuesFlag: [],
+    };
   }
 
   componentDidMount() {
@@ -28,48 +27,56 @@ class Play extends Component {
   }
 
   async updateValues() {
-    const { dataFlags } = this.props;
+    const { dataFlags, dataNumber } = this.props;
+    const number = Number(dataNumber);
     const flagsApi = await flags();
-    !dataFlags ? this.randomValues(flagsApi) : this.randomValues(dataFlags)
-  }
-
-  randomValues(flags) {
-    const { dataNumber } = this.props;
     const { index } = this.state;
-    const number = Number(dataNumber)
     let elements = [];
 
-    const value = () => Math.floor(Math.random() * flags.length);
-    for (let i = 0; i < number; i += 1) elements.push(flags[value()]);
+    if (!dataFlags) {
+      const valueRandom = () => Math.floor(Math.random() * flagsApi.length);
 
-    this.randomNumber(elements, index)
-    return this.setState({ valueFlag: elements[index] })
-  }
+      for (let i = 0; i < number; i += 1) {
+        elements.push({
+          id: i,
+          optionCorrect: flagsApi[index],
+          options: [
+            flagsApi[index].name,
+            flagsApi[valueRandom()].name,
+            flagsApi[valueRandom()].name,
+            flagsApi[valueRandom()].name,
+          ],
+        });
+      }
+      this.setState({ valuesFlag: elements });
+    } else {
+      const valueRandom = () => Math.floor(Math.random() * dataFlags.length);
 
-  randomNumber(elements, index) {
-    const flagTrue = elements[index].name
-
-    const flagsResult = elements.filter((element) => element.name !== flagTrue)
-    const randomN = () => Math.floor(Math.random() * flagsResult.length);
-
-    const flagFalse1 = flagsResult[randomN()].name;
-    const flagFalse2 = flagsResult[randomN()].name;
-    const flagFalse3 = flagsResult[randomN()].name;
-    const nameFlags = [flagTrue, flagFalse1, flagFalse2, flagFalse3]
-
-
-    this.setState({ valuesNamesFlags: nameFlags.sort(() => Math.random() - 0.5) })
+      for (let i = 0; i < number; i += 1) {
+        elements.push({
+          id: i,
+          optionCorrect: dataFlags[index],
+          options: [
+            dataFlags[index].name,
+            dataFlags[valueRandom()].name,
+            dataFlags[valueRandom()].name,
+            dataFlags[valueRandom()].name,
+          ],
+        });
+      }
+      this.setState({ valuesFlag: elements });
+    };
   }
 
   handleClick(event) {
     const { valueFlag, score } = this.state;
     if (event === valueFlag.name) {
-    alert("parabéns vc acertou!!!")
-    this.setState({ 
-      score: score + 1,
-    })
+      alert("parabéns vc acertou!!!");
+      this.setState({
+        score: score + 1,
+      });
     } else {
-      alert("parabéns vc errou!!!")
+      alert("parabéns vc errou!!!");
     }
   }
 
@@ -80,40 +87,22 @@ class Play extends Component {
 
   render() {
     const { dataNumber } = this.props;
-    const { score, valueFlag, valuesNamesFlags, isDisable, index } = this.state;
+    const { score, valuesFlag, isDisable, index } = this.state;
+    
+
     return (
       <main>
-        <HeaderPlay
-          number={dataNumber}
-          score={score}
-        />
-        <div className="container-play">
-          <h3 className="title-play">Qual é essa bandeira?</h3>
-          <img className="img-play" src={valueFlag.svg} alt={valueFlag.name} />
-          {valuesNamesFlags.map((valueName, index) => (
-            <button
-              disabled={isDisable}
-              type="button"
-              key={index}
-              value={ valueName }
-              className="button-alt-play"
-              onClick={(event) => this.handleClick(event.target.value)}
-            >
-              {valueName}
-            </button>
-            ))}
-            {/* { isDisable && <ButtonNext next={ this.clickNext } /> } */}
-            
-            <ButtonNext next={ this.clickNext } />      
-        </div>
+        <HeaderPlay number={dataNumber} score={score} />
+
       </main>
-    )
+
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
   dataNumber: state.data.number,
   dataFlags: state.data.flags,
-})
+});
 
 export default connect(mapStateToProps)(Play);

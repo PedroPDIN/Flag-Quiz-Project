@@ -8,6 +8,6 @@ export const fetchApi = async () => {
 
 export const flags = async () => {
      const resultApi = await fetchApi();
-     const dataFlags = resultApi.map((data) => ({ 'name': data.name, 'svg': data.flag }))
+     const dataFlags = resultApi.map((data) => ({ 'name': data.name, 'imageFlag': data.flag }))
      return dataFlags;
 }
