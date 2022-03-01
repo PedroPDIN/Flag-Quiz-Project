@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./ButtonNext.css";
 
 class ButtonNext extends Component {
   render() {
@@ -7,6 +8,7 @@ class ButtonNext extends Component {
       <button
         type="button"
         onClick={ next }
+        className="button-next-play"
       >
         Proxima
       </button>
