@@ -80,15 +80,20 @@ class Play extends Component {
       alert("parabéns vc acertou!!!");
       this.setState({
         score: score + 1,
+        isDisable: true,
       });
     } else {
+      this.setState({ isDisable: true })
       alert("parabéns vc errou!!!");
     }
   }
 
   clickNext() {
     const { index } = this.state;
-    this.setState({ index: index + 1 });
+    this.setState({ 
+      index: index + 1,
+      isDisable: false,
+    });
   }
 
   render() {
@@ -157,9 +162,9 @@ class Play extends Component {
                   </button>
                 </div>
               ))}
-              {/* { isDisable && <ButtonNext next={ this.clickNext } /> } */}
 
-              <ButtonNext next={this.clickNext} />
+              { isDisable && <ButtonNext next={this.clickNext} /> }
+
             </div>
           </section>
         )}
