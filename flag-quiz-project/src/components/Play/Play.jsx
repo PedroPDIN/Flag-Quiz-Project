@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import HeaderPlay from "./components/header/HeaderPlay";
 import ButtonNext from "./components/ButtonNext/ButtonNext";
-import { fetchApi, flags } from "../../services/fetchApi";
+import Loading from "../Loading/Loading";
+import { flags } from "../../services/fetchApi";
 import "./Play.css";
 
 class Play extends Component {
@@ -19,6 +20,7 @@ class Play extends Component {
       next: false,
       score: 0,
       valuesFlag: [],
+      optionsCorrect:[],
     };
   }
 
@@ -30,7 +32,6 @@ class Play extends Component {
     const { dataFlags, dataNumber } = this.props;
     const number = Number(dataNumber);
     const flagsApi = await flags();
-    const { index } = this.state;
     let elements = [];
 
     if (!dataFlags) {
@@ -39,9 +40,9 @@ class Play extends Component {
       for (let i = 0; i < number; i += 1) {
         elements.push({
           id: i,
-          optionCorrect: flagsApi[index],
+          optionCorrect: flagsApi[i],
           options: [
-            flagsApi[index].name,
+            flagsApi[i].name,
             flagsApi[valueRandom()].name,
             flagsApi[valueRandom()].name,
             flagsApi[valueRandom()].name,
@@ -55,9 +56,9 @@ class Play extends Component {
       for (let i = 0; i < number; i += 1) {
         elements.push({
           id: i,
-          optionCorrect: dataFlags[index],
+          optionCorrect: dataFlags[i],
           options: [
-            dataFlags[index].name,
+            dataFlags[i].name,
             dataFlags[valueRandom()].name,
             dataFlags[valueRandom()].name,
             dataFlags[valueRandom()].name,
@@ -65,12 +66,15 @@ class Play extends Component {
         });
       }
       this.setState({ valuesFlag: elements });
-    };
+    }
   }
 
   handleClick(event) {
-    const { valueFlag, score } = this.state;
-    if (event === valueFlag.name) {
+    const { valuesFlag, score, index } = this.state;
+    const objectCorrect = valuesFlag.filter((question) => question.id === index)[0];
+    const { optionCorrect: { name } } = objectCorrect;
+
+    if (event === name) {
       alert("parabéns vc acertou!!!");
       this.setState({
         score: score + 1,
@@ -88,14 +92,73 @@ class Play extends Component {
   render() {
     const { dataNumber } = this.props;
     const { score, valuesFlag, isDisable, index } = this.state;
-    
 
     return (
       <main>
-        <HeaderPlay number={dataNumber} score={score} />
+        {!valuesFlag ? (
+          <Loading />
+        ) : (
+          <section>
+            <HeaderPlay number={dataNumber} score={score} />
 
+            <div className="container-play">
+              <h3 className="title-play">Qual é essa bandeira?</h3>
+              {valuesFlag.filter((question) => question.id === index).map(({ optionCorrect, options }) => (
+                <div>
+                  <img
+                   className="img-play"
+                   src={optionCorrect.svg}
+                   alt={optionCorrect.name}
+                 /> 
+        
+                  <button
+                    disabled={isDisable}
+                    type="button"
+                    value={options[0]}
+                    className="button-alt-play"
+                    onClick={(event) => this.handleClick(event.target.value)}
+                  >
+                    {options[0]}
+                  </button>
+
+                  <button
+                    disabled={isDisable}
+                    type="button"
+                    value={options[1]}
+                    className="button-alt-play"
+                    onClick={(event) => this.handleClick(event.target.value)}
+                  >
+                    {options[1]}
+                  </button>
+
+                  <button
+                    disabled={isDisable}
+                    type="button"
+                    value={options[2]}
+                    className="button-alt-play"
+                    onClick={(event) => this.handleClick(event.target.value)}
+                  >
+                    {options[2]}
+                  </button>
+
+                  <button
+                    disabled={isDisable}
+                    type="button"
+                    value={options[3]}
+                    className="button-alt-play"
+                    onClick={(event) => this.handleClick(event.target.value)}
+                  >
+                    {options[3]}
+                  </button>
+                </div>
+              ))}
+              {/* { isDisable && <ButtonNext next={ this.clickNext } /> } */}
+
+              <ButtonNext next={this.clickNext} />
+            </div>
+          </section>
+        )}
       </main>
-
     );
   }
 }
