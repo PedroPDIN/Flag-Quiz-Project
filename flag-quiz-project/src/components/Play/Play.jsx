@@ -32,26 +32,28 @@ class Play extends Component {
     const { dataFlags, dataNumber } = this.props;
     const number = Number(dataNumber);
     const flagsApi = await flags();
+    const flagsRandom = flagsApi.sort(()=> Math.random() - 0.5)
     let elements = [];
 
     if (!dataFlags) {
-      const valueRandom = () => Math.floor(Math.random() * flagsApi.length);
+      const valueRandom = () => Math.floor(Math.random() * flagsRandom.length);
 
       for (let i = 0; i < number; i += 1) {
         elements.push({
           id: i,
-          optionCorrect: flagsApi[i],
+          optionCorrect: flagsRandom[i],
           options: [
-            flagsApi[i].name,
-            flagsApi[valueRandom()].name,
-            flagsApi[valueRandom()].name,
-            flagsApi[valueRandom()].name,
+            flagsRandom[i].name,
+            flagsRandom[valueRandom()].name,
+            flagsRandom[valueRandom()].name,
+            flagsRandom[valueRandom()].name,
           ],
         });
       }
-      this.setState({ valuesFlag: elements });
+      this.setState({ valuesFlag: elements.sort(()=> Math.random() - 0.5) });
     } else {
-      const valueRandom = () => Math.floor(Math.random() * dataFlags.length);
+      const flagsRandom = dataFlags.sort(()=> Math.random() - 0.5)
+      const valueRandom = () => Math.floor(Math.random() * flagsRandom.length);
 
       for (let i = 0; i < number; i += 1) {
         elements.push({
@@ -92,6 +94,9 @@ class Play extends Component {
   render() {
     const { dataNumber } = this.props;
     const { score, valuesFlag, isDisable, index } = this.state;
+    const numbers = [0, 1, 2, 3];
+    const NRN =  numbers.sort(()=> Math.random() - 0.5); // NVN => "New Random Numbers"
+
 
     return (
       <main>
@@ -114,41 +119,41 @@ class Play extends Component {
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[0]}
+                    value={options[NRN[0]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[0]}
+                    {options[NRN[0]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[1]}
+                    value={options[NRN[1]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[1]}
+                    {options[NRN[1]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[2]}
+                    value={options[NRN[2]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[2]}
+                    {options[NRN[2]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[3]}
+                    value={options[NRN[3]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[3]}
+                    {options[NRN[3]]}
                   </button>
                 </div>
               ))}
