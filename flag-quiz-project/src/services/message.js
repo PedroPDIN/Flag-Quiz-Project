@@ -16,7 +16,7 @@ export const result2 = {
   referencePerson: "~Charles Chaplin",
   image:
     "https://i.pinimg.com/originals/b6/3c/e7/b63ce721952731ac9bc8da355fe7e568.gif",
-  alt: "goku se aquecendo",
+  alt: "goku aquecendo-se",
 }; // Quando o resultado for igual a média.
 
 export const result3 = {
@@ -34,7 +34,7 @@ export const result4 = {
   reference: false,
   phrase: `Perfeito!!! você provou que seu conhecimento esta em "oto patamar".`,
   image: "https://c.tenor.com/f8qS4sXxe8QAAAAd/outro-patamar-flamengo.gif",
-  alt: "oto patamar meme",
+  alt: "meme do oto patamar",
 }; // Quando gabaritar.
 
 export const result5 = {
