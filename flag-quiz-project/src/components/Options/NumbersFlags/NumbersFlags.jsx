@@ -33,10 +33,10 @@ class NumbersFlags extends Component {
               id="values-3"
               type="radio"
               name='numbers'
-              value='25'
+              value='30'
               onChange={onChangeValue}
             />
-            25
+            30
           </label>
           <label htmlFor="values-4" className="input-numbers-options">
             <input

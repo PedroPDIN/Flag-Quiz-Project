@@ -21,7 +21,6 @@ class Play extends Component {
       next: false,
       score: 0,
       valuesFlag: [],
-      optionsCorrect:[],
       validButtonWord: false,
       hits: 0,
       wrong: 0,
@@ -117,7 +116,6 @@ class Play extends Component {
     const { score, valuesFlag, isDisable, index } = this.state;
     const numbers = [0, 1, 2, 3];
     const NRN =  numbers.sort(()=> Math.random() - 0.5); // NVN => "New Random Numbers"
-
 
     return (
       <main>

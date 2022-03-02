@@ -8,7 +8,7 @@ export const addData = (number, flags) => ({
 })
 
 export const addResult = (hits, wrong) => ({
-  type: 'RESULT',
+  type: 'ADD_RESULT',
   hits,
   wrong,
 })
