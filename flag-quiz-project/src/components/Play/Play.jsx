@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import HeaderPlay from "./components/header/HeaderPlay";
 import ButtonNext from "./components/ButtonNext/ButtonNext";
 import Loading from "../Loading/Loading";
+import { addResult } from "../redux/actions";
 import { flags } from "../../services/fetchApi";
 import "./Play.css";
 
@@ -15,12 +16,15 @@ class Play extends Component {
     this.clickNext = this.clickNext.bind(this);
 
     this.state = {
-      index: 0, // será responsável por pegar as indece das perguntas.
+      index: 0, // será responsável por pegar as indexe das perguntas.
       isDisable: false,
       next: false,
       score: 0,
       valuesFlag: [],
       optionsCorrect:[],
+      validButtonWord: false,
+      hits: 0,
+      wrong: 0,
     };
   }
 
@@ -72,28 +76,40 @@ class Play extends Component {
   }
 
   handleClick(event) {
-    const { valuesFlag, score, index } = this.state;
+    const { valuesFlag, score, index, hits, wrong } = this.state;
     const objectCorrect = valuesFlag.filter((question) => question.id === index)[0];
     const { optionCorrect: { name } } = objectCorrect;
 
     if (event === name) {
-      alert("parabéns vc acertou!!!");
       this.setState({
         score: score + 1,
+        hits: hits + 1,
         isDisable: true,
       });
     } else {
-      this.setState({ isDisable: true })
-      alert("parabéns vc errou!!!");
+      this.setState({
+        score: score + 1,
+        wrong: wrong + 1,
+        isDisable: true,
+      });
     }
   }
 
   clickNext() {
-    const { index } = this.state;
+    const { index, score, hits, wrong } = this.state;
+    const { dataNumber, history, resultDispatch } = this.props;
+    if(score < dataNumber) {
     this.setState({ 
       index: index + 1,
       isDisable: false,
     });
+  } else {
+    this.setState({
+      isDisable: false,
+    });
+    resultDispatch(hits, wrong);
+    history.push("/result")
+  }
   }
 
   render() {
@@ -163,7 +179,9 @@ class Play extends Component {
                 </div>
               ))}
 
-              { isDisable && <ButtonNext next={this.clickNext} /> }
+              { isDisable && <ButtonNext 
+              next={this.clickNext} 
+              buttonWord={ score === Number(dataNumber) ? "VER RESULTADO" : "PRÓXIMO" } /> }
 
             </div>
           </section>
@@ -178,4 +196,8 @@ const mapStateToProps = (state) => ({
   dataFlags: state.data.flags,
 });
 
-export default connect(mapStateToProps)(Play);
+const mapDispatchToProps = (dispatch) => ({
+  resultDispatch: (a, b) => dispatch(addResult(a, b)), 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Play);
