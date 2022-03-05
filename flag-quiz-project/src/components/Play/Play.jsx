@@ -127,8 +127,8 @@ class Play extends Component {
 
             <div className="container-play">
               <h3 className="title-play">Qual é essa bandeira?</h3>
-              {valuesFlag.filter((question) => question.id === index).map(({ optionCorrect, options }) => (
-                <div className="container-options-play">
+              {valuesFlag.filter((question) => question.id === index).map(({ id, optionCorrect, options }) => (
+                <div className="container-options-play" key={ id }>
                   <img
                    className="img-play"
                    src={optionCorrect.svg}
