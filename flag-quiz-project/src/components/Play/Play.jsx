@@ -40,33 +40,61 @@ class Play extends Component {
 
     if (!dataFlags) {
       const valueRandom = () => Math.floor(Math.random() * flagsRandom.length);
+      const flagsNameRandom = flagsRandom.map((v) => v.name);
 
       for (let i = 0; i < number; i += 1) {
+        const alternative0 = flagsRandom[i];
+        const alternativeName0 = alternative0.name;
+
+        const newFilter1 = flagsNameRandom.filter((name) => name !== alternativeName0);
+        const alternative1 = newFilter1[valueRandom()];
+      
+        const newFilter2 = newFilter1.filter((name) => name !== alternative1);
+        const alternative2 = newFilter2[valueRandom()];
+
+        const newFilter3 = newFilter2.filter((name) => name !== alternative2);
+        const alternative3 = newFilter3[valueRandom()];
+
+
         elements.push({
           id: i,
-          optionCorrect: flagsRandom[i],
+          optionCorrect: alternative0,
           options: [
-            flagsRandom[i].name,
-            flagsRandom[valueRandom()].name,
-            flagsRandom[valueRandom()].name,
-            flagsRandom[valueRandom()].name,
+            alternativeName0,
+            alternative1,
+            alternative2,
+            alternative3,
           ],
         });
       }
       this.setState({ valuesFlag: elements.sort(()=> Math.random() - 0.5) });
     } else {
-      const flagsRandom = dataFlags.sort(()=> Math.random() - 0.5)
+      const flagsRandom = dataFlags.sort(()=> Math.random() - 0.5);
+      const flagsNameRandom = flagsRandom.map((v) => v.name);
       const valueRandom = () => Math.floor(Math.random() * flagsRandom.length);
+      
 
       for (let i = 0; i < number; i += 1) {
+        const alternative0 = flagsRandom[i];
+        const alternativeName0 = alternative0.name;
+
+        const newFilter1 = flagsNameRandom.filter((name) => name !== alternativeName0);
+        const alternative1 = newFilter1[valueRandom()];
+      
+        const newFilter2 = newFilter1.filter((name) => name !== alternative1);
+        const alternative2 = newFilter2[valueRandom()];
+
+        const newFilter3 = newFilter2.filter((name) => name !== alternative2);
+        const alternative3 = newFilter3[valueRandom()];
+
         elements.push({
           id: i,
-          optionCorrect: flagsRandom[i],
+          optionCorrect: alternative0,
           options: [
-            flagsRandom[i].name,
-            flagsRandom[valueRandom()].name,
-            flagsRandom[valueRandom()].name,
-            flagsRandom[valueRandom()].name,
+            alternativeName0,
+            alternative1,
+            alternative2,
+            alternative3,
           ],
         });
       }
@@ -75,6 +103,7 @@ class Play extends Component {
   }
 
   handleClick(event) {
+    console.log(event)
     const { valuesFlag, score, index, hits, wrong } = this.state;
     const objectCorrect = valuesFlag.filter((question) => question.id === index)[0];
     const { optionCorrect: { name } } = objectCorrect;
@@ -138,41 +167,41 @@ class Play extends Component {
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[NRN[0]]}
+                    value={!options[NRN[0]] ? 'Marley' : options[NRN[0]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[NRN[0]]}
+                    {!options[NRN[0]] ? 'Marley' : options[NRN[0]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[NRN[1]]}
+                    value={!options[NRN[1]] ? 'Atlântida' : options[NRN[1]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[NRN[1]]}
+                    {!options[NRN[1]] ? 'Atlântida' : options[NRN[1]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[NRN[2]]}
+                    value={!options[NRN[2]] ? 'Wakanda' : options[NRN[2]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[NRN[2]]}
+                    {!options[NRN[2]] ? 'Wakanda' : options[NRN[2]]}
                   </button>
 
                   <button
                     disabled={isDisable}
                     type="button"
-                    value={options[NRN[3]]}
+                    value={!options[NRN[3]] ? 'Eldia' : options[NRN[3]]}
                     className="button-alt-play"
                     onClick={(event) => this.handleClick(event.target.value)}
                   >
-                    {options[NRN[3]]}
+                    {!options[NRN[3]] ? 'Eldia' : options[NRN[3]]}
                   </button>
                 </div>
               ))}
