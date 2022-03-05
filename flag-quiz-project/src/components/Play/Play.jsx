@@ -61,12 +61,12 @@ class Play extends Component {
       for (let i = 0; i < number; i += 1) {
         elements.push({
           id: i,
-          optionCorrect: dataFlags[i],
+          optionCorrect: flagsRandom[i],
           options: [
-            dataFlags[i].name,
-            dataFlags[valueRandom()].name,
-            dataFlags[valueRandom()].name,
-            dataFlags[valueRandom()].name,
+            flagsRandom[i].name,
+            flagsRandom[valueRandom()].name,
+            flagsRandom[valueRandom()].name,
+            flagsRandom[valueRandom()].name,
           ],
         });
       }
