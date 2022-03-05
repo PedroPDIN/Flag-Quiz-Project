@@ -103,7 +103,6 @@ class Play extends Component {
   }
 
   handleClick(event) {
-    console.log(event)
     const { valuesFlag, score, index, hits, wrong } = this.state;
     const objectCorrect = valuesFlag.filter((question) => question.id === index)[0];
     const { optionCorrect: { name } } = objectCorrect;
