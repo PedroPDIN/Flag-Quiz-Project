@@ -4,12 +4,8 @@ Flag Quiz
 
 ### Olá desafiante, seja bem muito bem vindo as Flag Quiz!. Aqui você sera capaz em colocar em prática seus conhecimentos sobre todas as bandeiras do mundo.
 
-<h1 align="center">
-<img src="./src/images/funcionalidade.gif"/>
-</h1>
-
 # Descrição
 
 #### Desenvolvido para usuário praticar tudo o que sabe sobre bandeiras mundias. A aplicação trará uma quantidade de bandeiras para resolver em um _QUIZ_. Com base na _BANDEIRA_ que está sendo renderizado, em qual das 4 alternativas o nome da bandeira é a correta.
 
-# ACESSE O REPOSITORIO DO PREJETO PARA TER MAIS INFORMAÇÕES ;).
+## ACESSE O REPOSITORIO DO PREJETO PARA TER MAIS INFORMAÇÕES ;).
