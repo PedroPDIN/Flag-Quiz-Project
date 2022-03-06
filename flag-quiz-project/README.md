@@ -10,7 +10,7 @@ Flag Quiz
 
 # Descrição
 
-#### Desenvolvido para usuário praticar tudo o que sabe sobre bandeiras mundias. A aplicação trará uma quantidade de bandeiras para resolver (o usuário também tem liberdade de selecionar a quantidade de bandeiras em "opções") e um _QUIZ_ para solucionar com base na _BANDEIRA_ que está sendo renderizado, em qual das 4 alternativas o nome da bandeira é a correta.
+#### Desenvolvido para usuário praticar tudo o que sabe sobre bandeiras mundias. A aplicação trará uma quantidade de bandeiras para resolver em um _QUIZ_. Com base na _BANDEIRA_ que está sendo renderizado, em qual das 4 alternativas o nome da bandeira é a correta.
 
 # Clonar projeto para sua maquina
 1. verifique se você esta branch `main` ou `master`.
@@ -37,7 +37,7 @@ Flag Quiz
 * Com isso basta executar o comando `git checkout -b 'nome-da-brach-flag-quiz'`.
 
 Exemplo: `git checkout -b pedro-lima-flag-quiz`
-> Criará uma branch e acessa-lá graças o tag "-b"
+> Criará uma branch e acessa-lá logo em seguida graças o tag "-b"
 
 * Voilá
 
@@ -249,7 +249,7 @@ const INIT = {
 ]
 
 ```
-## Possíveis futuras funcionalidades e melhorias
+## Possíveis, futuras funcionalidades e melhorias
 
 * Tela de Raking
 * Melhoras a questão de "Carregamento". A cada mudança de caminho nas páginas, possuir um tempo de carregamento, para evitar "possíveis" problemas de assicronisidade.
