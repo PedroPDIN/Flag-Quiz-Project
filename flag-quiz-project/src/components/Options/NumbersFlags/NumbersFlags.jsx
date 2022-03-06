@@ -78,6 +78,8 @@ class NumbersFlags extends Component {
             />
             200
           </label>
+          <span className="span-option-page">Importante: Por padrão o número de bandeiras iniciasse com 20.</span>
+          <span className="span-option-page-2">Important: By default the number of flags starts with 20.</span>
         </fieldset>
       </div>
     )

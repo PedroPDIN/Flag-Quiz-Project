@@ -17,3 +17,18 @@
   margin: 15px;
   cursor: pointer;
 }
+
+.span-option-page {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.span-option-page-2 {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  flex-direction: column;
+}
