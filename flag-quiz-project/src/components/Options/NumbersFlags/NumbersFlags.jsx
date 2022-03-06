@@ -33,10 +33,10 @@ class NumbersFlags extends Component {
               id="values-3"
               type="radio"
               name='numbers'
-              value='25'
+              value='30'
               onChange={onChangeValue}
             />
-            25
+            30
           </label>
           <label htmlFor="values-4" className="input-numbers-options">
             <input
@@ -78,6 +78,8 @@ class NumbersFlags extends Component {
             />
             200
           </label>
+          <span className="span-option-page">Importante: Por padrão o número de bandeiras iniciasse com 20.</span>
+          <span className="span-option-page-2">Important: By default the number of flags starts with 20.</span>
         </fieldset>
       </div>
     )

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
 
 .button-option {
-  background-color: green;
-  border: solid green 5px;
-  color: green;
+  background-color: white;
+  border: solid black 5px;
+  color: white;
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
@@ -14,7 +14,7 @@
 }
 
 .button-option:hover {
-  color: white;
+  color: black;
 }
 
 .button-option:active {

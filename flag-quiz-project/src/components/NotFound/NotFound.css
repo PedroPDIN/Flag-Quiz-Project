@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
+
+.container-found-page {
+  align-content: stretch;
+  align-items: center;
+  background-color: white;
+  border: solid black 5px;
+  border-radius: 19px;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  justify-content: center;
+  position: absolute;
+  left: 30%;
+  top: 50px;
+  width: 600px;
+}
+
+.span-found {
+  bottom: 480px;
+  color: rgb(0, 0, 0);
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+}
+
+.link-found-page {
+  background-color: white;
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 22px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.img-found-page {
+  border: solid black 5px;
+  border-radius: 10px;
+  margin-top: 40px;
+  width: 550px;
+  height: 300px;
+}

@@ -4,6 +4,7 @@ import Menu from '../Menu/Menu'
 import Play from '../Play/Play'
 import Options from '../Options/Options'
 import Library from '../Library/Library'
+import Result from '../Result/Result'
 import NotFound from '../NotFound/NotFound';
 import Start from '../Start/Start'
 
@@ -17,6 +18,7 @@ class Routes extends Component {
           <Route exact path="/play" component={Play} />
           <Route exact path="/options" component={Options} />
           <Route exact path="/Library" component={Library} />
+          <Route exact path="/result" component={Result} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>

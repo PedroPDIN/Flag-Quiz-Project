@@ -15,8 +15,13 @@
   width: 600px;
 }
 
+.container-options-play{
+  display: flex;
+  flex-direction: column;
+}
+
 .title-play {
-  bottom: 467px;
+  bottom: 480px;
   color: white;
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
