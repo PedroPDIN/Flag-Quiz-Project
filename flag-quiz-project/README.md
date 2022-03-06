@@ -1,70 +1,255 @@
-# Getting Started with Create React App
+<h1 align="center">
+Flag Quiz
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Olá desafiante, seja bem muito bem vindo as Flag Quiz!. Aqui você sera capaz em colocar em prática seus conhecimentos sobre todas as bandeiras do mundo.
 
-## Available Scripts
+<h1 align="center">
+<img src="./src/images/funcionalidade.gif"/>
+</h1>
 
-In the project directory, you can run:
+# Descrição
 
-### `npm start`
+#### Desenvolvido para usuário praticar tudo o que sabe sobre bandeiras mundias. A aplicação trará uma quantidade de bandeiras para resolver (o usuário também tem liberdade de selecionar a quantidade de bandeiras em "opções") e um _QUIZ_ para solucionar com base na _BANDEIRA_ que está sendo renderizado, em qual das 4 alternativas o nome da bandeira é a correta.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Clonar projeto para sua maquina
+1. verifique se você esta branch `main` ou `master`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  * utilize esse comando no seu terminal para verificar: `git branch`.
+  * Caso esteja na branch informada vá para o proximo passo, caso não esteja execute este comando:
 
-### `npm test`
+  `git checkout main` ou `git checkout master`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Clonando repositório.
 
-### `npm run build`
+* Click no botão `Code` e copie a url `SSH`.
+* Caso preferir copie esse url: `git@github.com:PedroPDIN/Flag-Quiz-Project.git`.
+* Após isso no seu terminal execute o comando `git clone` e logo em seguida a **url** do projeto:
+> Exemplo: `git clone git@github.com:PedroPDIN/Flag-Quiz-Project.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Instalando as Dependências
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* acesse a pasta do projeto com o comando: `cd flag-quiz-project/`.
+* Logo após isso execute o comando `npm install` para instalar as dependências.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Criando branch a partir da `master` ou `main`.
+* Verifique que você esta na brach `master` ou `main`. (para verificar basta seguir as instruções no passo 1).
+* Com isso basta executar o comando `git checkout -b 'nome-da-brach-flag-quiz'`.
 
-### `npm run eject`
+Exemplo: `git checkout -b pedro-lima-flag-quiz`
+> Criará uma branch e acessa-lá graças o tag "-b"
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Voilá
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Tela inicial
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h1 align="center">
+<img src="./src/images/page-initial.gif"/>
+</h1>
 
-## Learn More
+> Página inicial que terá o título e o botão de entra no Flag Quiz.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Tela de Menu
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h1 align="center">
+<img src="./src/images/page-menu.gif"/>
+</h1>
 
-### Code Splitting
+> Aqui o usuário poderá jogar o Quiz clicando no botão "Play", configurar a quantidade de bandeiras e selecionar uma "lista" de bandeiras que usuário preferir acessando a "Options" e por fim ter curiosidades de saber todas as bandeiras do quiz acessando a opção "Library".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Tela Library
 
-### Analyzing the Bundle Size
+<h1 align="center">
+<img src="./src/images/page-library.gif"/>
+</h1>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> Possui todas as informações de bandeiras que terá no Quiz.
 
-### Making a Progressive Web App
+# Tela Options
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<h1 align="center">
+<img src="./src/images/page-options.gif"/>
+</h1>
 
-### Advanced Configuration
+> Aqui o usuário "se preferir" poderá selecionar a quantidade de bandeiras para resolver (10, 20, 30, 50, 100, 200), por padrão o quantidade possui-rá 20 e filtrar uma "lista" de bandeiras com base nos continentes (África, Américas, Ásia, Europa, Oceania).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> E o botão salvar, que será responsável por salvar as alterações feitas pelo o usuário.
 
-### Deployment
+# Tela Play
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<h1 align="center">
+<img src="./src/images/page-play.gif"/>
+</h1>
 
-### `npm run build` fails to minify
+> Aqui é a parte do Quiz em que o desafiante irá responder a uma pergunta, QUAL É ESSA BANDEIRA?.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Com isso, o desafiante terá que selecionar a uma única resposta correta entre 4 alternativas
+
+> Também poderá acompanhar o "resolved" que são as perguntas resolvidas, configurado (nas Options) ou não (Lembrando que por padrão terá 20).
+
+> OBS: Caso o desafiante não filtre as bandeiras na opção "Options", o Quiz terá bandeiras aleatórias de todos os continentes e a quantidade de bandeiras padrão.
+
+# Tela Result
+
+<h1 align="center">
+<img src="./src/images/page-result.gif"/>
+</h1>
+
+> Aqui o desafiante irá verificar o resultado final, contendo os acertos e também os erros. E, também uma breve mensagem de acordo com o resultado.
+
+# Ferramentas, Bibliotecas e Linguagens utilizadas.
+
+- [Javascript](https://devdocs.io/javascript/)
+- [React](https://pt-br.reactjs.org/docs/getting-started.html)
+- [React-Redux](https://react-redux.js.org/)
+- [CSS](https://www.w3schools.com/cssref/)
+- [API - Rest Countries](https://restcountries.com/)
+
+# React-Redux
+
+#### Na aplicação foi utilizada a biblioteca Redux para armazenar no estado global, as quantidades e filtros configurado pelo o desafiante. Além, também de armazenar o resultado final do Quiz (acertos e erros).
+
+- Estrutura da quantidades e filtros configurado:
+
+```
+const INIT = {
+  number: '20',
+  flags: '',
+}
+```
+
+**OBS**: como citado nos tópicos anteriores a quantidade padrão inicial é 20.
+
+- Estrutura do resultado final do Quiz:
+
+```
+const INIT = {
+    hits: 0,
+    wrong: 0,
+}
+```
+
+# API - Rest Countries
+
+#### Retorna apenas informações de cada países do mundo, a API possui duas versões de _endpoint_ (v2 e v3). Nesse caso a versão utilizada foi **Versão 2**, pois essa versão especifica retorna os dados mais legível para o Quiz.
+
+- _**endpoint**_ utilizado:
+
+`https://restcountries.com/v2/all`
+
+- _**endpoint**_ retorno:
+
+```
+[
+  {
+    "name": "Brazil",
+    "topLevelDomain": [
+      ".br"
+    ],
+    "alpha2Code": "BR",
+    "alpha3Code": "BRA",
+    "callingCodes": [
+    "55"
+    ],
+    "capital": "Brasília",
+    "altSpellings": [
+      "BR",
+      "Brasil",
+      "Federative Republic of Brazil",
+      "República Federativa do Brasil"
+    ],
+    "subregion": "South America",
+    "region": "Americas",
+    "population": 212559409,
+    "latlng": [
+      -10.0,
+      -55.0
+    ],
+    "demonym": "Brazilian",
+    "area": 8515767.0,
+    "gini": 53.4,
+    "timezones": [
+      "UTC-05:00",
+      "UTC-04:00",
+      "UTC-03:00",
+      "UTC-02:00"
+    ],
+    "borders": [
+      "ARG",
+      "BOL",
+      "COL",
+      "FRA",
+      "GUF",
+      "GUY",
+      "PRY",
+      "PER",
+      "SUR",
+      "URY",
+      "VEN"
+    ],
+    "nativeName": "Brasil",
+    "numericCode": "076",
+    "flags": {
+      "svg": "https://flagcdn.com/br.svg",
+      "png": "https://flagcdn.com/w320/br.png"
+    },
+    "currencies": [
+    {
+      "code": "BRL",
+      "name": "Brazilian real",
+      "symbol": "R$"
+    }
+    ],
+    "languages": [
+      {
+        "iso639_1": "pt",
+        "iso639_2": "por",
+        "name": "Portuguese",
+        "nativeName": "Português"
+      }
+    ],
+    "translations": {
+      "br": "Brasil",
+      "pt": "Brasil",
+      "nl": "Brazilië",
+      "hr": "Brazil",
+      "fa": "برزیل",
+      "de": "Brasilien",
+      "es": "Brasil",
+      "fr": "Brésil",
+      "ja": "ブラジル",
+      "it": "Brasile",
+      "hu": "Brazília"
+    },
+    "flag": "https://flagcdn.com/br.svg",
+    "regionalBlocs": [
+      {
+        "acronym": "USAN",
+        "name": "Union of South American Nations",
+        "otherAcronyms": [
+          "UNASUR",
+          "UNASUL",
+          "UZAN"
+        ],
+        "otherNames": [
+          "Unión de Naciones Suramericanas",
+          "União de Nações Sul-Americanas",
+          "Unie van Zuid-Amerikaanse Naties",
+          "South American Union"
+        ]
+      }
+    ],
+    "cioc": "BRA",
+    "independent": true
+  },
+    ...
+    ...
+    ...
+]
+
+```
+## Possíveis futuras funcionalidades e melhorias
+
+* Tela de Raking
+* Melhoras a questão de "Carregamento". A cada mudança de caminho nas páginas, possuir um tempo de carregamento, para evitar "possíveis" problemas de assicronisidade.

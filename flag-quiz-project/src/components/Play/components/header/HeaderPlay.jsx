@@ -10,7 +10,7 @@ class Header extends Component {
         <header className='container-header-play' >
           <Link to="/menu" className='link-menu-play'>Menu</Link>
           <h1 className='h1-play'>Flag Quiz</h1>
-          <h3 className='score-play'>{`score: ${score}/${number}`}</h3>
+          <h3 className='score-play'>{`resolved: ${score}/${number}`}</h3>
         </header>
       </div>
     )
