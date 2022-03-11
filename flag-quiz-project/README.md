@@ -29,7 +29,10 @@ Flag Quiz
 
 3. Instalando as Dependências
 
-* acesse a pasta do projeto com o comando: `cd flag-quiz-project/`.
+* Entre na pasta do repositório que você acabou de clonar:
+ `cd Flag-quiz-project`
+
+* Acesse a pasta do projeto com o comando: `cd flag-quiz-project/`.
 * Logo após isso execute o comando `npm install` para instalar as dependências.
 
 4. Criando branch a partir da `master` ou `main`.
