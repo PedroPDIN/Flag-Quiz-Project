@@ -10,4 +10,4 @@ Flag Quiz
 
 ## ACESSE O REPOSITORIO DO PREJETO PARA TER MAIS INFORMAÇÕES ;).
 
-## EM BREVE MAS MELHORIAS.
+## Em breve mas melhorias.
