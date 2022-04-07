@@ -1,4 +1,4 @@
-const url = "http://restcountries.com/v2/all";
+const url = "https://restcountries.com/v2/all";
 
  export const fetchApi = async () => {
   const response = await fetch(url);
