@@ -147,7 +147,7 @@ class Play extends Component {
 
     return (
       <main>
-        {!valuesFlag ? (
+        {valuesFlag.length < 1 ? (
           <Loading />
         ) : (
           <section>
