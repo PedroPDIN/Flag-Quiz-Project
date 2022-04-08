@@ -2,7 +2,7 @@
 Flag Quiz
 </h1>
 
-### Olá desafiante, seja bem muito bem vindo as Flag Quiz!. Aqui você sera capaz em colocar em prática seus conhecimentos sobre todas as bandeiras do mundo.
+### Olá desafiante, seja bem muito bem vindo as Flag Quiz!. Aqui você sera capaz em colocar em prática seus conhecimentos sobre todas as bandeiras de países e territórios.
 
 <h1 align="center">
 <img src="./src/images/funcionalidade.gif"/>
