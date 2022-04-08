@@ -144,10 +144,11 @@ class Play extends Component {
     const { score, valuesFlag, isDisable, index } = this.state;
     const numbers = [0, 1, 2, 3];
     const NRN =  numbers.sort(()=> Math.random() - 0.5); // NVN => "New Random Numbers"
+    const MIN_OBJ_LENGTH = 1;
 
     return (
       <main>
-        {valuesFlag.length < 1 ? (
+        {valuesFlag.length <= MIN_OBJ_LENGTH ? (
           <Loading />
         ) : (
           <section>
