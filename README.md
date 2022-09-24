@@ -11,3 +11,4 @@ Flag Quiz
 ## ACESSE O REPOSITORIO DO PREJETO PARA TER MAIS INFORMAÇÕES ;).
 
 ## Em breve mas melhorias.
+### Como responsividade, estrutura do código, etc...
