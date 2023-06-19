@@ -36,7 +36,7 @@ class Library extends Component {
     return (
       <main>
         <header className="conteiner-header-library">
-          <Link to="/menu" className="link-library">
+          <Link to="/home" className="link-library">
             Menu
           </Link>
           <h3 className="h3-library">Library</h3>

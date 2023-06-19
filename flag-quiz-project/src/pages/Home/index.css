@@ -1,0 +1,42 @@
+.conteiner-home {
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  opacity: 0.9;
+  border-radius: 250px;
+  border: solid black 5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.h2-home {
+  font-size: 30px;
+  color: rgb(12, 12, 12);
+}
+
+.p-home {
+  color: rgb(20, 20, 20);
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: -10px;
+}
+
+.links-home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  margin-top: 10px;
+}
+
+.link-home-play, .link-home-options, .link-home-library {
+  color: rgb(12, 12, 12);
+  font-weight: 900;
+  font-size: 30px;
+  padding: 5px;
+  text-decoration: none;
+}
