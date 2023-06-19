@@ -7,7 +7,7 @@ class Button extends Component {
     const { filter } = this.props;
     return (
       <div>
-        <Link to="/menu">
+        <Link to="/home">
         </Link>
 
         <button type='button' onClick={filter} className='button-option' >

@@ -9,8 +9,9 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={pages.Start} />
           <Route exact path="/home" component={pages.Home} />
-          <Route exact path="/Library" component={pages.Library} />
-          <Route exact path="/result" component={ pages.Result } />
+          <Route exact path="/library" component={pages.Library} />
+          <Route exact path="/options" component={pages.Options} />
+          <Route exact path="/result" component={pages.Result} />
           <Route exact path="*" component={pages.NotFound} />
         </Switch>
       </>

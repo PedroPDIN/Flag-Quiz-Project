@@ -7,7 +7,7 @@ class Header extends Component {
     return (
 
       <header className="container-header-option">
-        <Link to="/menu" className="link-option">Menu</Link>
+        <Link to="/home" className="link-option">Menu</Link>
         <h3 className="h3-option">Options</h3>
       </header>
 
