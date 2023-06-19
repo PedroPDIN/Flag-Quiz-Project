@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HeaderResult from "../HeaderResult";
+import HeaderResult from "../../components/HeaderResult";
 import {
   result1,
   result2,

@@ -1,0 +1,42 @@
+.container-result-screen {
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.container-result-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-phrase-result {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.p-phrase-person {
+  font-size: 20px;
+  margin-top: -4px;
+}
+
+.p-person-result{
+  margin-left: 250px;
+  margin-top: -20px;
+}
+
+.img-result-screen {
+  margin-bottom: 40px;
+}
+
+.container-result-quiz-false {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
