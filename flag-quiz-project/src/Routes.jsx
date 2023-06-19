@@ -7,7 +7,8 @@ class Routes extends Component {
     return (
       <>
         <Switch>
-          <Route exact path="/Library" component={ pages.Library } />
+          <Route exact path="/Library" component={pages.Library} />
+          <Route exact path="*" component={pages.NotFound} />
         </Switch>
       </>
     );
