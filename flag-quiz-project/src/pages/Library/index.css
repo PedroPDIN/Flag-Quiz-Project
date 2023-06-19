@@ -1,8 +1,6 @@
-
 .conteiner-header-library {
   align-items: center;
   display: flex;
-  font-family: 'Rubik', sans-serif;
   justify-content: space-around;
   margin-top: 20px;
 }
