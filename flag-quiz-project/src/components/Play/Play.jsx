@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HeaderPlay from "./components/header/HeaderPlay";
-import ButtonNext from "./components/ButtonNext/ButtonNext";
+import HeaderPlay from "../headerPlay";
+import ButtonNext from "../ButtonNextPlay";
 import Loading from "../Loading/Loading";
 import { addResult } from "../redux/actions";
 import { flags } from "../../services/fetchApi";

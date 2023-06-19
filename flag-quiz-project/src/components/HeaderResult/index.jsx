@@ -7,7 +7,7 @@ class HeaderResult extends Component {
     return (
       <header className="container-header-result">
         <h1 className="h1-result">Flag Quiz</h1>
-        <Link to="/menu" className="link-menu-result">
+        <Link to="/home" className="link-menu-result">
           Menu
         </Link>
       </header>

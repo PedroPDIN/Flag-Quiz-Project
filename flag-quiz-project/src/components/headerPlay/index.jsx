@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <div>
         <header className='container-header-play' >
-          <Link to="/menu" className='link-menu-play'>Menu</Link>
+          <Link to="/home" className='link-menu-play'>Menu</Link>
           <h1 className='h1-play'>Flag Quiz</h1>
           <h3 className='score-play'>{`resolved: ${score}/${number}`}</h3>
         </header>

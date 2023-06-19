@@ -11,6 +11,7 @@ class Routes extends Component {
           <Route exact path="/home" component={pages.Home} />
           <Route exact path="/library" component={pages.Library} />
           <Route exact path="/options" component={pages.Options} />
+          <Route exact path="/play" component={pages.Play} />
           <Route exact path="/result" component={pages.Result} />
           <Route exact path="*" component={pages.NotFound} />
         </Switch>
