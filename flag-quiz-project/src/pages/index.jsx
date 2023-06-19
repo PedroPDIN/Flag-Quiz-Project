@@ -1,5 +1,6 @@
+import Home from "./Home";
 import Library from "./Library";
 import NotFound from "./NotFound";
-import Home from "./Home";
+import Start from "./Start";
 
-export { Library, NotFound, Home };
+export { Library, NotFound, Home, Start };

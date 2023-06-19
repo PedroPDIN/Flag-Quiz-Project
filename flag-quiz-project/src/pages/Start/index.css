@@ -1,0 +1,27 @@
+.conteiner-start {
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  border-radius: 250px;
+  border: solid black 5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 200px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.h1-start {
+  color: rgb(12, 12, 12);
+  font-size: 30px;
+}
+
+.link-start {
+  background-color: black;
+  border-radius: 19px;
+  color: rgb(233, 224, 224);
+  font-size: 20px;
+  padding: 8px;
+  text-decoration: none;
+}
