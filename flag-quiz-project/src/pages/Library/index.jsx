@@ -31,7 +31,9 @@ class Library extends Component {
 
   render() {
     const { infoFlags, loading } = this.state;
+  
     if (!loading) return <components.Loading />;
+  
     return (
       <main>
         <components.Headers typeHeader="library" />

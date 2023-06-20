@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as component from "../../components";
-import {
-  result1,
-  result2,
-  result3,
-  result4,
-  result5,
-} from "../../services/message";
+import { result1, result2, result3, result4, result5 } from "../../services/message";
 import "./index.css";
 
 class Result extends Component {
