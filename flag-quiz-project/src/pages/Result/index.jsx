@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HeaderResult from "../../components/HeaderResult";
+import * as component from "../../components";
 import {
   result1,
   result2,
@@ -33,11 +33,12 @@ class Result extends Component {
 
   render() {
     const { dataHits, dataWrong } = this.props;
-    const { phrase, image, alt, reference, referencePhrase, referencePerson } =
-      this.resultMessage();
+    const { phrase, image, alt, reference, referencePhrase, referencePerson } = this.resultMessage();
+    
     return (
       <main>
-        <HeaderResult />
+        <component.Headers typeHeader="result" />
+
         <div className="container-result-screen">
           <h1 className="h1-result-screen">Resultado do Quiz</h1>
           <h2 className="h2-result-screen">{`Acertos: ${dataHits}`}</h2>

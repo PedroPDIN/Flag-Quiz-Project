@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import * as components from "../../components";
 import { fetchApi } from "../../services/fetchApi";
 import "./index.css";
@@ -35,12 +34,7 @@ class Library extends Component {
     if (!loading) return <components.Loading />;
     return (
       <main>
-        <header className="conteiner-header-library">
-          <Link to="/home" className="link-library">
-            Menu
-          </Link>
-          <h3 className="h3-library">Library</h3>
-        </header>
+        <components.Headers typeHeader="library" />
 
         <section className="conteiner-section-library">
           {infoFlags.map((info) => (

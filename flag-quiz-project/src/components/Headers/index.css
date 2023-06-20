@@ -1,0 +1,101 @@
+/* estilização do header da página de Options da aplicação */
+.container-header-option { 
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.link-option {
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.h3-option {
+  background-color: rgb(103, 109, 109);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: white;
+  padding: 8px;
+}
+
+/* estilização do header da página de Play da aplicação */
+.container-header-play {
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.link-menu-play, .score-play {
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 8px;
+  text-decoration: none;
+}
+
+/* estilização do header da página de Result da aplicação */
+.container-header-result {
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.link-menu-result {
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+
+/* estilização do header da página de Library da aplicação */
+.container-header-library {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.link-library {
+  background-color: rgb(233, 224, 224);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.h3-library {
+  background-color: rgb(103, 109, 109);
+  border: solid black 5px;
+  border-radius: 10px;
+  color: white;
+  padding: 8px;
+}
+

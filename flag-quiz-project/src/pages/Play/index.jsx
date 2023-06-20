@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HeaderPlay from "../../components/headerPlay";
 import ButtonNext from "../../components/ButtonNextPlay";
 import * as components from "../../components";
 import { addResult } from "../../redux/actions";
@@ -141,7 +140,6 @@ class Play extends Component {
     const numbers = [0, 1, 2, 3];
     const NRN = numbers.sort(() => Math.random() - 0.5); // NVN => "New Random Numbers"
     const MIN_OBJ_LENGTH = 1;
-    console.log(valuesFlag)
 
     return (
       <main>
@@ -149,7 +147,7 @@ class Play extends Component {
           <components.Loading />
         ) : (
           <section>
-            <HeaderPlay number={dataNumber} score={score} />
+            <components.Headers typeHeader="play" score={score} numbersFlags={ dataNumber } />
 
             <div className="container-play">
               <h3 className="title-play">Qual é essa bandeira?</h3>

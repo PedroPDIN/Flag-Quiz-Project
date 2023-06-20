@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Header from "../../components/HeaderOptions";
+import * as components from "../../components";
 import NumbersFlags from "../../components/NumbersFlags";
 import FilterFlag from "../../components/FilterFlag";
 import Button from "../../components/ButtonOptions";
@@ -154,7 +154,7 @@ class Options extends Component {
     const { define1, define2, define3, define4, define5 } = this.state;
     return (
       <main>
-        <Header />
+        <components.Headers typeHeader="options" />
         <form className="container-form-options">
           <NumbersFlags onChangeValue={this.onChangeValue} />
           <FilterFlag
