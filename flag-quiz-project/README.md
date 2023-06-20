@@ -5,7 +5,7 @@ Flag Quiz
 ### Olá desafiante, seja bem muito bem vindo as Flag Quiz!. Aqui você sera capaz em colocar em prática seus conhecimentos sobre todas as bandeiras de países e territórios.
 
 <h1 align="center">
-<img src="./src/images/funcionalidade.gif"/>
+<img src="./src/assets/images/funcionalidade.gif"/>
 </h1>
 
 # Descrição
@@ -48,7 +48,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela inicial
 
 <h1 align="center">
-<img src="./src/images/page-initial.gif"/>
+<img src="./src/assets/images/page-initial.gif"/>
 </h1>
 
 > Página inicial que terá o título e o botão de entra no Flag Quiz.
@@ -56,7 +56,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela de Menu
 
 <h1 align="center">
-<img src="./src/images/page-menu.gif"/>
+<img src="./src/assets/images/page-menu.gif"/>
 </h1>
 
 > Aqui o usuário poderá jogar o Quiz clicando no botão "Play", configurar a quantidade de bandeiras e selecionar uma "lista" de bandeiras que usuário preferir acessando a "Options" e por fim ter curiosidades de saber todas as bandeiras do quiz acessando a opção "Library".
@@ -64,7 +64,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela Library
 
 <h1 align="center">
-<img src="./src/images/page-library.gif"/>
+<img src="./src/assets/images/page-library.gif"/>
 </h1>
 
 > Possui todas as informações de bandeiras que terá no Quiz.
@@ -72,7 +72,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela Options
 
 <h1 align="center">
-<img src="./src/images/page-options.gif"/>
+<img src="./src/assets/images/page-options.gif"/>
 </h1>
 
 > Aqui o usuário "se preferir" poderá selecionar a quantidade de bandeiras para resolver (10, 20, 30, 50, 100, 200), por padrão o quantidade possui-rá 20 e filtrar uma "lista" de bandeiras com base nos continentes (África, Américas, Ásia, Europa, Oceania).
@@ -82,7 +82,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela Play
 
 <h1 align="center">
-<img src="./src/images/page-play.gif"/>
+<img src="./src/assets/images/page-play.gif"/>
 </h1>
 
 > Aqui é a parte do Quiz em que o desafiante irá responder a uma pergunta, QUAL É ESSA BANDEIRA?.
@@ -96,7 +96,7 @@ Exemplo: `git checkout -b pedro-lima-flag-quiz`
 # Tela Result
 
 <h1 align="center">
-<img src="./src/images/page-result.gif"/>
+<img src="./src/assets/images/page-result.gif"/>
 </h1>
 
 > Aqui o desafiante irá verificar o resultado final, contendo os acertos e também os erros. E, também uma breve mensagem de acordo com o resultado.
