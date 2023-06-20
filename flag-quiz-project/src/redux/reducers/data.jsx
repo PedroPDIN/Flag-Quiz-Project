@@ -1,9 +1,9 @@
-import { ADD_DATA } from '../actions';
+import { ADD_DATA } from "../actions";
 
 const INIT = {
-  number: '20',
-  flags: '',
-}
+  number: "20",
+  flags: "",
+};
 
 const data = (state = INIT, action) => {
   switch (action.type) {
@@ -13,9 +13,9 @@ const data = (state = INIT, action) => {
         number: action.number,
         flags: action.flags,
       };
-      default:
-        return state;
+    default:
+      return state;
   }
-}
+};
 
 export default data;

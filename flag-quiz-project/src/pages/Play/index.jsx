@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import HeaderPlay from "../../components/headerPlay";
 import ButtonNext from "../../components/ButtonNextPlay";
 import * as components from "../../components";
-import { addResult } from "../../components/redux/actions";
+import { addResult } from "../../redux/actions";
 import { flags } from "../../services/fetchApi";
 import "./index.css";
 
@@ -141,6 +141,7 @@ class Play extends Component {
     const numbers = [0, 1, 2, 3];
     const NRN = numbers.sort(() => Math.random() - 0.5); // NVN => "New Random Numbers"
     const MIN_OBJ_LENGTH = 1;
+    console.log(valuesFlag)
 
     return (
       <main>

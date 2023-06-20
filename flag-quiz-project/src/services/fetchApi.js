@@ -9,7 +9,6 @@ const url = "https://restcountries.com/v2/all";
 export const flags = async () => {
   const data = await fetchApi();
   const resultApi = data.filter((info) => info.region !== 'Polar');
-  console.log(resultApi)
   const dataFlags = resultApi.map((data) => ({
     name: data.name,
     svg: data.flag,

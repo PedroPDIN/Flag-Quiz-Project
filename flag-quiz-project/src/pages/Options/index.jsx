@@ -4,7 +4,7 @@ import Header from "../../components/HeaderOptions";
 import NumbersFlags from "../../components/NumbersFlags";
 import FilterFlag from "../../components/FilterFlag";
 import Button from "../../components/ButtonOptions";
-import { addData } from "../../components/redux/actions";
+import { addData } from "../../redux/actions";
 import { fetchApi } from "../../services/fetchApi";
 import "./index.css";
 
