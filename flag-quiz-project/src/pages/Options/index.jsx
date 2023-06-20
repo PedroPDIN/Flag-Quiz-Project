@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as components from "../../components";
-import NumbersFlags from "../../components/NumbersFlags";
-import FilterFlag from "../../components/FilterFlag";
-import Button from "../../components/ButtonOptions";
 import { addData } from "../../redux/actions";
 import { fetchApi } from "../../services/fetchApi";
 import "./index.css";
@@ -15,18 +12,18 @@ class Options extends Component {
     this.flagsApi = this.flagsApi.bind(this);
     this.validButton = this.validButton.bind(this);
     this.onChangeValue = this.onChangeValue.bind(this);
-    this.toDefineClick1 = this.toDefineClick1.bind(this);
-    this.toDefineClick2 = this.toDefineClick2.bind(this);
-    this.toDefineClick3 = this.toDefineClick3.bind(this);
-    this.toDefineClick4 = this.toDefineClick4.bind(this);
-    this.toDefineClick5 = this.toDefineClick5.bind(this);
+    this.defineClickAfrica = this.defineClickAfrica.bind(this);
+    this.defineClickAmerica = this.defineClickAmerica.bind(this);
+    this.defineClickAsia = this.defineClickAsia.bind(this);
+    this.defineClickEuropa = this.defineClickEuropa.bind(this);
+    this.defineClickOceania = this.defineClickOceania.bind(this);
 
     this.state = {
-      define1: true,
-      define2: true,
-      define3: true,
-      define4: true,
-      define5: true,
+      defineAfrica: true,
+      defineAmerica: true,
+      defineAsia: true,
+      defineEuropa: true,
+      defineOceania: true,
       flags: [], // passar via props para o componente "Play".
       flagsAfrica: [],
       flagsAmericas: [],
@@ -49,6 +46,7 @@ class Options extends Component {
       svg: data.flag,
       region: data.region,
     }));
+  
     this.setState({
       flags: countries,
       flagsAfrica: countries.filter((v) => v.region === "Africa"),
@@ -59,13 +57,11 @@ class Options extends Component {
     });
   }
 
-  toDefineClick1() {
-    this.setState({ define1: !this.state.define1 });
-    const { define1, flags, flagsAfrica } = this.state;
-    if (define1 === true) {
-      this.setState({
-        flags: flags.filter((value) => value.region !== "Africa"),
-      });
+  defineClickAfrica() {
+    this.setState({ defineAfrica: !this.state.defineAfrica });
+    const { defineAfrica, flags, flagsAfrica } = this.state;
+    if (defineAfrica === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== "Africa") });
     } else {
       this.setState((prevState) => ({
         flags: [...prevState.flags, ...flagsAfrica],
@@ -73,13 +69,11 @@ class Options extends Component {
     }
   }
 
-  toDefineClick2() {
-    this.setState({ define2: !this.state.define2 });
-    const { define2, flags, flagsAmericas } = this.state;
-    if (define2 === true) {
-      this.setState({
-        flags: flags.filter((value) => value.region !== "Americas"),
-      });
+  defineClickAmerica() {
+    this.setState({ defineAmerica: !this.state.defineAmerica });
+    const { defineAmerica, flags, flagsAmericas } = this.state;
+    if (defineAmerica === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== "Americas") });
     } else {
       this.setState((prevState) => ({
         flags: [...prevState.flags, ...flagsAmericas],
@@ -87,13 +81,11 @@ class Options extends Component {
     }
   }
 
-  toDefineClick3() {
-    this.setState({ define3: !this.state.define3 });
-    const { define3, flags, flagsAsia } = this.state;
-    if (define3 === true) {
-      this.setState({
-        flags: flags.filter((value) => value.region !== "Asia"),
-      });
+  defineClickAsia() {
+    this.setState({ defineAsia: !this.state.defineAsia });
+    const { defineAsia, flags, flagsAsia } = this.state;
+    if (defineAsia === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== "Asia") });
     } else {
       this.setState((prevState) => ({
         flags: [...prevState.flags, ...flagsAsia],
@@ -101,13 +93,11 @@ class Options extends Component {
     }
   }
 
-  toDefineClick4() {
-    this.setState({ define4: !this.state.define4 });
-    const { define4, flags, flagsEurope } = this.state;
-    if (define4 === true) {
-      this.setState({
-        flags: flags.filter((value) => value.region !== "Europe"),
-      });
+  defineClickEuropa() {
+    this.setState({ defineEuropa: !this.state.defineEuropa });
+    const { defineEuropa, flags, flagsEurope } = this.state;
+    if (defineEuropa === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== "Europe") });
     } else {
       this.setState((prevState) => ({
         flags: [...prevState.flags, ...flagsEurope],
@@ -115,13 +105,11 @@ class Options extends Component {
     }
   }
 
-  toDefineClick5() {
-    this.setState({ define5: !this.state.define5 });
-    const { define5, flags, flagsOceania } = this.state;
-    if (define5 === true) {
-      this.setState({
-        flags: flags.filter((value) => value.region !== "Oceania"),
-      });
+  defineClickOceania() {
+    this.setState({ defineOceania: !this.state.defineOceania });
+    const { defineOceania, flags, flagsOceania } = this.state;
+    if (defineOceania === true) {
+      this.setState({ flags: flags.filter((value) => value.region !== "Oceania") });
     } else {
       this.setState((prevState) => ({
         flags: [...prevState.flags, ...flagsOceania],
@@ -139,7 +127,7 @@ class Options extends Component {
     } else {
       alert(`
          Erro:
-         Números de bandeiras não selecionado,
+         Números de bandeiras não selecionado
          ou Números de bandeiras não corresponde
          com a quantidade de bandeiras selecionado!
          `);
@@ -151,25 +139,34 @@ class Options extends Component {
   }
 
   render() {
-    const { define1, define2, define3, define4, define5 } = this.state;
+    const {
+      defineAfrica,
+      defineAmerica,
+      defineAsia,
+      defineEuropa,
+      defineOceania,
+    } = this.state;
     return (
       <main>
         <components.Headers typeHeader="options" />
+
         <form className="container-form-options">
-          <NumbersFlags onChangeValue={this.onChangeValue} />
-          <FilterFlag
-            define1={define1}
-            define2={define2}
-            define3={define3}
-            define4={define4}
-            define5={define5}
-            toDefineClick1={this.toDefineClick1}
-            toDefineClick2={this.toDefineClick2}
-            toDefineClick3={this.toDefineClick3}
-            toDefineClick4={this.toDefineClick4}
-            toDefineClick5={this.toDefineClick5}
+          <components.AmountFlags onChangeValue={this.onChangeValue} />
+
+          <components.FlagsOptions
+            defineAfrica={defineAfrica}
+            defineAmerica={defineAmerica}
+            defineAsia={defineAsia}
+            defineEuropa={defineEuropa}
+            defineOceania={defineOceania}
+            defineClickAfrica={this.defineClickAfrica}
+            defineClickAmerica={this.defineClickAmerica}
+            defineClickAsia={this.defineClickAsia}
+            defineClickEuropa={this.defineClickEuropa}
+            defineClickOceania={this.defineClickOceania}
           />
-          <Button filter={this.validButton} />
+
+          <components.BtnOption validationEvent={this.validButton} />
         </form>
       </main>
     );
