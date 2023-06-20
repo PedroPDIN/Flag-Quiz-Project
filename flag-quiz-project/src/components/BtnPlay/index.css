@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
-
 .button-next-play {
   border: solid black 2px;
   cursor: pointer;
-  font-family: 'Rubik', sans-serif;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 2px;

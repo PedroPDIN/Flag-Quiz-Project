@@ -1,0 +1,26 @@
+.container-options-play{
+  display: flex;
+  flex-direction: column;
+}
+
+.img-play {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  height: 250px;
+  width: 400px;
+}
+
+.button-alt-play {
+  border: solid black 2px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 10px;
+  width: 400px;
+}
+
+.button-alt-play:hover {
+  background-color: rgb(105, 105, 105);
+  color: white;
+}

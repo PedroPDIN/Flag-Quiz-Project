@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ButtonNext from "../../components/ButtonNextPlay";
 import * as components from "../../components";
 import { addResult } from "../../redux/actions";
 import { flags } from "../../services/fetchApi";
@@ -12,10 +11,10 @@ class Play extends Component {
 
     this.updateValues = this.updateValues.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.clickNext = this.clickNext.bind(this);
+    this.eventConfirm = this.eventConfirm.bind(this);
 
     this.state = {
-      index: 0, // será responsável por pegar as indexe das perguntas.
+      iQuestions: 0, // será responsável por pegar as indexe das perguntas.
       isDisable: false,
       next: false,
       score: 0,
@@ -62,6 +61,7 @@ class Play extends Component {
           options: [alternativeName0, alternative1, alternative2, alternative3],
         });
       }
+
       this.setState({ valuesFlag: elements.sort(() => Math.random() - 0.5) });
     } else {
       const flagsRandom = dataFlags.sort(() => Math.random() - 0.5);
@@ -89,18 +89,15 @@ class Play extends Component {
           options: [alternativeName0, alternative1, alternative2, alternative3],
         });
       }
+
       this.setState({ valuesFlag: elements });
     }
   }
 
   handleClick(event) {
-    const { valuesFlag, score, index, hits, wrong } = this.state;
-    const objectCorrect = valuesFlag.filter(
-      (question) => question.id === index
-    )[0];
-    const {
-      optionCorrect: { name },
-    } = objectCorrect;
+    const { valuesFlag, score, iQuestions, hits, wrong } = this.state;
+    const objectCorrect = valuesFlag.filter((question) => question.id === iQuestions)[0];
+    const { optionCorrect: { name } } = objectCorrect;
 
     if (event === name) {
       this.setState({
@@ -117,12 +114,13 @@ class Play extends Component {
     }
   }
 
-  clickNext() {
-    const { index, score, hits, wrong } = this.state;
+  eventConfirm() {
+    const { iQuestions, score, hits, wrong } = this.state;
     const { dataNumber, history, resultDispatch } = this.props;
+
     if (score < dataNumber) {
       this.setState({
-        index: index + 1,
+        iQuestions: iQuestions + 1,
         isDisable: false,
       });
     } else {
@@ -136,9 +134,7 @@ class Play extends Component {
 
   render() {
     const { dataNumber } = this.props;
-    const { score, valuesFlag, isDisable, index } = this.state;
-    const numbers = [0, 1, 2, 3];
-    const NRN = numbers.sort(() => Math.random() - 0.5); // NVN => "New Random Numbers"
+    const { score, valuesFlag, isDisable, iQuestions } = this.state;
     const MIN_OBJ_LENGTH = 1;
 
     return (
@@ -147,64 +143,26 @@ class Play extends Component {
           <components.Loading />
         ) : (
           <section>
-            <components.Headers typeHeader="play" score={score} numbersFlags={ dataNumber } />
+            <components.Headers
+              typeHeader="play"
+              score={score}
+              numbersFlags={dataNumber}
+            />
 
             <div className="container-play">
               <h3 className="title-play">Qual é essa bandeira?</h3>
-              {valuesFlag
-                .filter((question) => question.id === index)
-                .map(({ id, optionCorrect, options }) => (
-                  <div className="container-options-play" key={id}>
-                    <img
-                      className="img-play"
-                      src={optionCorrect.svg}
-                      alt={optionCorrect.name}
-                    />
 
-                    <button
-                      disabled={isDisable}
-                      type="button"
-                      value={!options[NRN[0]] ? "Marley" : options[NRN[0]]}
-                      className="button-alt-play"
-                      onClick={(event) => this.handleClick(event.target.value)}>
-                      {!options[NRN[0]] ? "Marley" : options[NRN[0]]}
-                    </button>
-
-                    <button
-                      disabled={isDisable}
-                      type="button"
-                      value={!options[NRN[1]] ? "Atlântida" : options[NRN[1]]}
-                      className="button-alt-play"
-                      onClick={(event) => this.handleClick(event.target.value)}>
-                      {!options[NRN[1]] ? "Atlântida" : options[NRN[1]]}
-                    </button>
-
-                    <button
-                      disabled={isDisable}
-                      type="button"
-                      value={!options[NRN[2]] ? "Wakanda" : options[NRN[2]]}
-                      className="button-alt-play"
-                      onClick={(event) => this.handleClick(event.target.value)}>
-                      {!options[NRN[2]] ? "Wakanda" : options[NRN[2]]}
-                    </button>
-
-                    <button
-                      disabled={isDisable}
-                      type="button"
-                      value={!options[NRN[3]] ? "Eldia" : options[NRN[3]]}
-                      className="button-alt-play"
-                      onClick={(event) => this.handleClick(event.target.value)}>
-                      {!options[NRN[3]] ? "Eldia" : options[NRN[3]]}
-                    </button>
-                  </div>
-                ))}
+              <components.BtnSelection
+                valuesFlags={valuesFlag}
+                handleClick={this.handleClick}
+                isDisable={isDisable}
+                iQuestions={iQuestions}
+              />
 
               {isDisable && (
-                <ButtonNext
-                  next={this.clickNext}
-                  buttonWord={
-                    score === Number(dataNumber) ? "VER RESULTADO" : "PRÓXIMO"
-                  }
+                <components.BtnPlay
+                  eventConfirm={this.eventConfirm}
+                  buttonWord={ score === Number(dataNumber) ? "VER RESULTADO" : "PRÓXIMO" }
                 />
               )}
             </div>
