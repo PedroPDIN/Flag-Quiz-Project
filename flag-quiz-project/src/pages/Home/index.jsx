@@ -5,7 +5,7 @@ import "./index.css";
 class Home extends Component {
   render() {
     return (
-      <div className="conteiner-home">
+      <div className="container-home">
         <h2 className="h2-home">Seja bem vindo ao Flag Quiz!!!</h2>
 
         <p className="p-home">

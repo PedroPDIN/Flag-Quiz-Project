@@ -38,9 +38,9 @@ class Library extends Component {
       <main>
         <components.Headers typeHeader="library" />
 
-        <section className="conteiner-section-library">
+        <section className="container-section-library">
           {infoFlags.map((info) => (
-            <div key={info.name} className="conteiner-info-library">
+            <div key={info.name} className="container-info-library">
               <img src={info.image} alt={info.name} className="img-library" />
               <span className="span-info-library">{info.name}</span>
             </div>

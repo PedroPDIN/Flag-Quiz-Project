@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-// import Routes from './components/Routes/Routes'
 import Routes from './Routes';
 
 class App extends Component {

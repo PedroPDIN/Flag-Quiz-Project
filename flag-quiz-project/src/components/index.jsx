@@ -4,7 +4,7 @@ import BtnPlay from "./BtnPlay";
 import BtnSelection from "./BtnSelection";
 import FlagsOptions from "./FlagsOptions";
 import Headers from "./Headers";
-import Loading from "./Loading/Loading";
+import Loading from "./Loading";
 
 export {
   AmountFlags,

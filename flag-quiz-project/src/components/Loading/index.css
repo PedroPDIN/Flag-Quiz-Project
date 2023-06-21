@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Yuji+Hentaigana+Akari&display=swap');
-
-.conteiner-loading {
+.container-loading {
   align-items: center;
   background-color: rgb(233, 224, 224);
   opacity: 0.9;
@@ -17,13 +15,11 @@
 
 .h1-loading {
   color: rgb(8, 8, 8);
-  font-family: 'Rubik', sans-serif;
   font-size: 50px;
 }
 
 .h3-loading {
   color: rgb(50, 121, 3);
-  font-family: 'Rubik', sans-serif;
   font-size: 30px;
   margin-top: 0px;
 }
