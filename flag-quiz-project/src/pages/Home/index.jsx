@@ -6,22 +6,24 @@ class Home extends Component {
   render() {
     return (
       <div className="container-home">
-        <h2 className="h2-home">Seja bem vindo ao Flag Quiz!!!</h2>
+        <div className="content-home">
+          <h2 className="h2-home">Seja bem vindo ao Flag Quiz!!!</h2>
 
-        <p className="p-home">
-          Desafie-se seus conhecimentos sobre as bandeiras do mundo inteiro.
-        </p>
+          <p className="p-home">
+            Desafie seus conhecimentos sobre as bandeiras do mundo inteiro.
+          </p>
 
-        <div className="links-home">
-          <Link to="/play" className="link-home-play">
-            Play
-          </Link>
-          <Link to="/options" className="link-home-options">
-            Options
-          </Link>
-          <Link to="/Library" className="link-home-library">
-            Library
-          </Link>
+          <div className="links-home">
+            <Link to="/play" className="link-home-play">
+              Play
+            </Link>
+            <Link to="/options" className="link-home-options">
+              Options
+            </Link>
+            <Link to="/Library" className="link-home-library">
+              Library
+            </Link>
+          </div>
         </div>
       </div>
     );
