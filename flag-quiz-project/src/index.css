@@ -11,9 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background-image: url('https://img.quizur.com/f/img60b902a4179510.66168777.png?lastEdited=1622737622');
   font-family: 'Rubik', sans-serif;
-
-
-  display: flex;
   margin: 0;
 }
 

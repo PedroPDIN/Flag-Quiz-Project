@@ -1,13 +1,62 @@
-.container-form-options {
-  align-content: stretch;
-  align-items: center;
-  background-color: rgb(103, 109, 109);
-  border: solid black 5px;
-  border-radius: 19px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 60px;
-  margin-top: 10px;
-  opacity: 0.9;
+@media only screen and (max-width: 600px) {
+  .container-form-options {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(103, 109, 109);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 20px 50px 20px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .container-form-options {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(103, 109, 109);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 40px 50px 40px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container-form-options {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(103, 109, 109);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 40px 50px 40px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container-form-options {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(103, 109, 109);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 200px 50px 200px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
 }

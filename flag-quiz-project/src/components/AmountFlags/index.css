@@ -1,31 +1,150 @@
-.container-numbers-options {
-  background-color: rgb(233, 224, 224);
-  border: solid black 5px;
-  border-radius: 10px;
-  color: black;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 20px;
-  padding: 25px;
-  text-decoration: none;
+@media only screen and (max-width: 600px) {
+  .container-numbers-options {
+    background-color: rgb(233, 224, 224);
+    border: solid black 5px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 18px;
+    padding: 25px;
+    text-decoration: none;
+  }
+
+  .input-numbers-options {
+    cursor: pointer;
+    margin: 10px 8px 0px 8px;
+  }
+
+  .span-option-page, .span-option-page-2  {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .span-option-page {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 4px 10px 4px;
+  }
+
+  .span-option-page-2 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 4px 10px 4px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .container-numbers-options {
+    background-color: rgb(233, 224, 224);
+    border: solid black 5px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 18px;
+    padding: 25px;
+    text-decoration: none;
+    width: 500px;
+  }
+
+  .input-numbers-options {
+    cursor: pointer;
+    margin: 10px 8px 0px 8px;
+  }
+
+  .span-option-page, .span-option-page-2  {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .span-option-page {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 4px 10px 4px;
+  }
+
+  .span-option-page-2 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 4px 10px 4px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container-numbers-options {
+    background-color: rgb(233, 224, 224);
+    border: solid black 5px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 18px;
+    padding: 25px;
+    text-decoration: none;
+    width: 560px;
+  }
+
+  .input-numbers-options {
+    cursor: pointer;
+    margin: 10px 8px 0px 8px;
+    padding-left: 12px;
+  }
+
+  .span-option-page, .span-option-page-2  {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .span-option-page {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 4px 10px 4px;
+  }
+
+  .span-option-page-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 4px 10px 4px;
+  }
 }
 
-.input-numbers-options {
-  margin: 15px;
-  cursor: pointer;
-}
+@media only screen and (min-width: 992px) {
+  .container-numbers-options {
+    background-color: rgb(233, 224, 224);
+    border: solid black 5px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 18px;
+    padding: 25px;
+    text-decoration: none;
+    width: 580px;
+  }
 
-.span-option-page {
-  align-items: center;
-  display: flex;
-  font-size: 15px;
-  flex-direction: column;
-  margin-top: 20px;
-}
+  .input-numbers-options {
+    cursor: pointer;
+    margin: 10px 8px 0px 8px;
+    padding-left: 14px;
+  }
 
-.span-option-page-2 {
-  align-items: center;
-  display: flex;
-  font-size: 15px;
-  flex-direction: column;
+  .span-option-page, .span-option-page-2  {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .span-option-page {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 4px 10px 4px;
+  }
+
+  .span-option-page-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 4px 10px 4px;
+  }
 }
