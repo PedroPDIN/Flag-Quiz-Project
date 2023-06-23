@@ -79,13 +79,13 @@
   justify-content: space-around;
   margin-top: 20px;
 }
-
+  
 .link-library {
   background-color: rgb(233, 224, 224);
   border: solid black 5px;
   border-radius: 10px;
   color: black;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   padding: 8px;
   text-decoration: none;
@@ -96,6 +96,20 @@
   border: solid black 5px;
   border-radius: 10px;
   color: white;
+  font-size: 18px;
   padding: 8px;
 }
 
+@media only screen and (max-width: 600px) {
+  .link-library, .h3-library {
+    font-size: 16px;
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .link-library, .h3-library {
+    font-size: 16px;
+    padding: 6px;
+  }
+}

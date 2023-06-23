@@ -40,7 +40,7 @@ class Library extends Component {
 
         <section className="container-section-library">
           {infoFlags.map((info) => (
-            <div key={info.name} className="container-info-library">
+            <div key={info.name} className="content-info-library">
               <img src={info.image} alt={info.name} className="img-library" />
               <span className="span-info-library">{info.name}</span>
             </div>
