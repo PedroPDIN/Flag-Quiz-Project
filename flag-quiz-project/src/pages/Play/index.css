@@ -1,22 +1,91 @@
-.container-play {
-  align-content: stretch;
-  align-items: center;
-  background-color: rgb(105, 105, 105);
-  border: solid black 5px;
-  border-radius: 19px;
-  display: flex;
-  flex-direction: column;
-  height: 550px;
-  justify-content: center;
-  position: absolute;
-  left: 30%;
-  width: 600px;
+@media only screen and (max-width: 600px) {
+  .container-play {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    margin: 0px 20px 50px 20px;
+  }
+
+  .title-play {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0px 20px 0px;
+    white-space: nowrap;
+  }
 }
 
-.title-play {
-  bottom: 480px;
-  color: white;
-  font-size: 30px;
-  font-weight: 600;
-  position: absolute;
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .container-play {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    margin: 0px 40px 50px 40px;
+  }
+
+  .title-play {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0px 0px 20px 0px;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container-play {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    height: 620px;
+    justify-content: center;
+    margin: 0px 100px 50px 100px;
+  }
+
+  .title-play {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0px 0px 20px 0px;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container-play {
+    align-content: stretch;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    border: solid black 5px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    height: 620px;
+    justify-content: center;
+    margin: 0px 230px 50px 230px;
+  }
+
+  .title-play {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0px 0px 20px 0px;
+    white-space: nowrap;
+  }
 }

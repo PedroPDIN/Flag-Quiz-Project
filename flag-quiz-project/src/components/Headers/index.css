@@ -48,17 +48,67 @@
   display: flex;
   justify-content: space-around;
   margin: 20px;
+  padding: 10px 0px 10px 0px;
+}
+
+.h1-play {
+  white-space: nowrap;
 }
 
 .link-menu-play, .score-play {
   background-color: rgb(233, 224, 224);
-  border: solid black 5px;
   border-radius: 10px;
   color: black;
   font-size: 17px;
   font-weight: 700;
-  padding: 8px;
+  padding: 6px;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-header-play{
+    flex-direction: column-reverse;
+    margin: 20px 40px 20px 40px;
+  }
+
+  .h1-play {
+    font-size: 30px;
+    margin: 4px 0px 14px 0px;
+  }
+
+  .score-play {
+    border: solid black 2px;
+  }
+
+  .link-menu-play {
+    border: solid black 4px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .link-menu-play, .score-play {
+    border: solid black 4px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container-header-play {
+    padding: 12px 0px 12px 0px;
+  }
+
+  .link-menu-play, .score-play {
+    border: solid black 4px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container-header-play {
+    padding: 12px 0px 12px 0px;
+  }
+
+  .link-menu-play, .score-play {
+    border: solid black 4px;
+  }
 }
 
 /* estilização do header da página de Result da aplicação */

@@ -1,26 +1,119 @@
-.container-options-play{
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width: 600px) {
+  .container-options-play {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-play {
+    display: flex;
+    height: 250px;
+    margin-bottom: 10px;
+    width: 270px;
+  }
+
+  .button-alt-play {
+    border: solid black 2px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 10px;
+    width: 270px;
+  }
+
+  .button-alt-play:hover {
+    background-color: rgb(105, 105, 105);
+    color: white;
+  }
 }
 
-.img-play {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  height: 250px;
-  width: 400px;
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .container-options-play {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-play {
+    display: flex;
+    height: 250px;
+    margin-bottom: 10px;
+    width: 440px;
+  }
+
+  .button-alt-play {
+    border: solid black 2px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 10px;
+    width: 400px;
+  }
+
+  .button-alt-play:hover {
+    background-color: rgb(105, 105, 105);
+    color: white;
+  }
 }
 
-.button-alt-play {
-  border: solid black 2px;
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: 600;
-  margin-bottom: 2px;
-  padding: 10px;
-  width: 400px;
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container-options-play {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-play {
+    display: flex;
+    height: 280px;
+    margin-bottom: 10px;
+    width: 500px;
+  }
+
+  .button-alt-play {
+    border: solid black 2px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 10px;
+    width: 500px;
+  }
+
+  .button-alt-play:hover {
+    background-color: rgb(105, 105, 105);
+    color: white;
+  }
 }
 
-.button-alt-play:hover {
-  background-color: rgb(105, 105, 105);
-  color: white;
+@media only screen and (min-width: 992px) {
+    .container-options-play {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-play {
+    display: flex;
+    height: 280px;
+    margin-bottom: 10px;
+    width: 520px;
+  }
+
+  .button-alt-play {
+    border: solid black 2px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 10px;
+    width: 500px;
+  }
+
+  .button-alt-play:hover {
+    background-color: rgb(105, 105, 105);
+    color: white;
+  }
 }

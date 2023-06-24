@@ -1,5 +1,6 @@
 .button-next-play {
   border: solid black 2px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 17px;
   font-weight: 600;
@@ -11,4 +12,10 @@
 .button-next-play:hover {
   background-color: rgb(1, 236, 1);
   color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .button-next-play {
+    width: 200px;
+  }
 }
